@@ -8,14 +8,23 @@
     Merci de rester silencieux dans les espaces communs afin de permettre à chacun de se concentrer. 
   </p>
   <div class="library-container">
-    <div>
-      Une belle photo
+    <div class="banner-lib" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'bibli-2.jpg' %>)">
+      <div class="baseline-container">
+        <h1 class="main-title"><strong>Découvez l'espace ressources</strong> </h1>
+        <h2 class="second-title"></h2>
+        <p class="main-subtitle">
+        Parce qu'ensemble, nous allons plus loin.
+        </p>
+      </div>
+      <%= link_to courses_path, style: "text-decoration: none;", class: "button-link" do %>
+        <button class="button-55" role="button"><span>Espace ressources</span></button>
+      <% end %>
     </div>
-    s
-    <div class=" library library-tchat"
-        data-controller="library-subscription"
+    
+    <div class="container chatroom"
+      data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>">
-
+      <h2>Silence de Stromae</h2>
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
           <%= render "messages/message", message: message %>
@@ -28,7 +37,7 @@
       %>
         <%= f.input :content,
           label: false,
-          placeholder: "Message ##{@library.name}",
+          placeholder: "Veuillez entrer votre message",
           wrapper_html: {class: "flex-grow-1"}
         %>
         <%= f.submit "Send", class: "btn btn-primary mb-3" %>

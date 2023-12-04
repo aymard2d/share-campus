@@ -1,8 +1,8 @@
 .library-container {
-  align-items: center;
-  margin: auto 100px;
+  align-items: top;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-gap: 16px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+
 }

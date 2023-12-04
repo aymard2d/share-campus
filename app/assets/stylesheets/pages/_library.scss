@@ -1,3 +1,37 @@
-.library-tchat {
+.banner-lib {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 500px;
+}
+
+.main-title {
+  margin: 10px;
+  color: rgb(189, 13, 13);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 42px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.second-title {
+  color: rgba(134, 217, 149, 0.951);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: regular; 
+}
+
+.main-subtitle {
+  font-size: 18px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin: 10px ;
+  font-weight: bold;
+
+}
+
+.baseline-container {
+  text-align: center;
 
 }
