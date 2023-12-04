@@ -1,2 +1,28 @@
 <h1>Libraries#show</h1>
-<p>Find me in app/views/libraries/show.html.erb</p>
+
+
+<div class="container library"
+    data-controller="library-subscription"
+  data-library-subscription-library-id-value="<%= @library.id %>"
+>
+  
+  <h1>#<%= @library.name %></h1>
+
+  <div class="messages" data-library-subscription-target="messages">
+    <% @library.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+
+  <%= simple_form_for [@library, @message],
+    html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }, class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@library.name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <% end %>
+</div>
