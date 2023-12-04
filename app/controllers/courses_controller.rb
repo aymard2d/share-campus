@@ -1,25 +1,27 @@
 class CoursesController < ApplicationController
+
   def index
-    @courses = Course.all
     @course = Course.new
-    @user = current_user
+    @courses = Course.all
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR summarize ILIKE :query"
+      @courses = @courses.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def create
     @course = Course.new(course_params)
-    @user = current_user
-    @course.user_id = current_user
+    @course.user = current_user
     if @course.save
-      redirect_to courses_path, notice: "Cours enregistré"
+      redirect_to courses_path
     else
-      render "courses/index", status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
   end
-
 
   private
 
   def course_params
-    params.require(:course).permit(:title, :summarize, :category, :date, :user_id)
+    params.require(:course).permit(:title, :summarize, :category, :date)
   end
 end
