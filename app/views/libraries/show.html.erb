@@ -1,28 +1,38 @@
-<h1>Libraries#show</h1>
+<div class="container">
+  <h1>Bienvenue à la bibliothèque</h1>
+  <p>Dans cet espace, vous allez pouvoir retrouver <a href="#" class="">l'espace ressources</a> dans lequel vous pourrez consulter, télécharger et uploader vos cours.
+    <br>
+    Des <a href="#" class="">salles d'entraide</a> sont également mises à votre disposition pour pouvoir travailler en groupe.
+    <br>
+    N'hésitez pas à utilser le <a href="#" id="tchat">tchat</a> pour poser des questions ou chercher des partenaires de travail.
+    Merci de rester silencieux dans les espaces communs afin de permettre à chacun de se concentrer. 
+  </p>
+  <div class="library-container">
+    <div>
+      Une belle photo
+    </div>
+    s
+    <div class=" library library-tchat"
+        data-controller="library-subscription"
+      data-library-subscription-library-id-value="<%= @library.id %>">
+
+      <div class="messages" data-library-subscription-target="messages">
+        <% @library.messages.each do |message| %>
+          <%= render "messages/message", message: message %>
+        <% end %>
+      </div>
 
 
-<div class="container library"
-    data-controller="library-subscription"
-  data-library-subscription-library-id-value="<%= @library.id %>"
->
-  
-  <h1>#<%= @library.name %></h1>
-
-  <div class="messages" data-library-subscription-target="messages">
-    <% @library.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
+      <%= simple_form_for [@library, @message],
+        html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }, class: "d-flex"} do |f|
+      %>
+        <%= f.input :content,
+          label: false,
+          placeholder: "Message ##{@library.name}",
+          wrapper_html: {class: "flex-grow-1"}
+        %>
+        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+      <% end %>
+      </div>
   </div>
-
-
-  <%= simple_form_for [@library, @message],
-    html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }, class: "d-flex"} do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@library.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
 </div>
