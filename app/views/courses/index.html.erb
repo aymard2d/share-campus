@@ -26,3 +26,12 @@
     <% end %>
   </div>
 </div>
+
+<%= simple_form_for (@course) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :summarize, as: :text %>
+  <%= f.input :category %>
+  <%= f.input :date, as: :date %>
+
+  <%= f.submit "Créer la course" %>
+<% end %>
