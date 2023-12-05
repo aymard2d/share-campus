@@ -23,4 +23,5 @@ Course.create!(user_id: user1.id, title: 'La grammaire extraterrestre', summariz
 Course.create!(user_id: user1.id, title: 'La révolution des objets inanimés', summarize: "Des objets inanimés, tels que des chaises, des stylos et des lampes, commencent soudainement à manifester une conscience et à revendiquer des droits. Une révolution inattendue des objets inanimés éclate, avec des manifestations dans les rues et des exigences pour une égalité des droits. Les humains doivent maintenant naviguer dans un monde où même les objets du quotidien ont une voix et des opinions.")
 Course.create!(user_id: user1.id, title: 'Le championnat du monde de lancer de spaghettis cuite', summarize: "Des athlètes du monde entier se rassemblent pour participer à un championnat où la discipline phare est le lancer de spaghettis. Les participants doivent maîtriser l'art du lancer précis et puissant pour remporter le titre de champion du monde. Des règles strictes régissent la taille, la cuisson et la sauce des spaghettis utilisés.")
 puts "Crée"
-Library.create(name: "tchat")
+
+Library.create(name: "Tchat de la bibliothèque")
