@@ -5,7 +5,14 @@
         <% if @courses.any? %>
           <% @courses.each do |course| %>
             <h4><%= course.title %></h4>
+            <p><%= course.date %></p>
             <p><%= course.summarize %></p>
+            <p><%= course.category %></p>
+            <p><%= course.user.email %><%= course.user.last_name %></p>
+            <img src="<%= image_path 'logo-pdf.jpg'%>">
+            <p><%= cl_image_tag course.document.key, width: 200, height: 400,crop: :fill, format: :jpg %></p>
+            <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/development/#{course.document.key}", target: :blank%>
+
           <% end %>
         <% else %>
           <em>Désolé, aucun sujet de cours n'a été trouvé.</em>
@@ -30,9 +37,10 @@
 <%= simple_form_for (@course) do |f| %>
   <%= f.input :title %>
   <%= f.input :summarize, as: :text %>
-  <%= f.input :category %>
-  <%= f.input :date, as: :date %>
-  <%= f.input :documents, as: :file, input_html: { multiple: true }, label: "Selectionne un document" %>
+  <%= f.input :category, collection: ["Ruby", "Javascript", "HTML", "CSS3", "Rails", "Bootstrap"] %>
+  <%= f.input_field :date, as: :hidden, value: Date.today %>
+  <%= f.input_field :user_id, as: :hidden, value: params[:id] %>
+  <%= f.input :document, as: :file, label: "Selectionne un document" %>
 
   <%= f.submit "Créer la course" %>
 <% end %>
