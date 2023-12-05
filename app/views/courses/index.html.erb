@@ -32,8 +32,7 @@
   <%= f.input :summarize, as: :text %>
   <%= f.input :category %>
   <%= f.input :date, as: :date %>
+  <%= f.input :documents, as: :file, input_html: { multiple: true }, label: "Selectionne un document" %>
 
   <%= f.submit "Créer la course" %>
 <% end %>
-
-
