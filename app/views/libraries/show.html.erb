@@ -1,10 +1,10 @@
 <div class="container">
   <h1>Bienvenue à la bibliothèque</h1>
-  <p>Dans cet espace, vous allez pouvoir retrouver <a href="#" class="">l'espace ressources</a> dans lequel vous pourrez consulter, télécharger et uploader vos cours.
+  <p>Dans cet espace, vous allez pouvoir retrouver <%= link_to "l'espace ressources", courses_path %> dans lequel vous pourrez consulter, télécharger et uploader vos cours.
     <br>
     Des <a href="#" class="">salles d'entraide</a> sont également mises à votre disposition pour pouvoir travailler en groupe.
     <br>
-    N'hésitez pas à utilser le <a href="#" id="tchat">tchat</a> pour poser des questions ou chercher des partenaires de travail.
+    N'hésitez pas à utilser le <a href="#chat"><strong>chat</strong></a> pour poser des questions ou chercher des partenaires de travail.
     Merci de rester silencieux dans les espaces communs afin de permettre à chacun de se concentrer. 
   </p>
   <div class="library-container">
@@ -24,7 +24,7 @@
     <div class="container chatroom"
       data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>">
-      <h2>Silence de Stromae</h2>
+      <h2 id="chat">Silence de Stromae</h2>
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
           <%= render "messages/message", message: message %>
@@ -37,7 +37,7 @@
       %>
         <%= f.input :content,
           label: false,
-          placeholder: "Veuillez entrer votre message",
+          placeholder: "Share ton message",
           wrapper_html: {class: "flex-grow-1"}
         %>
         <%= f.submit "Send", class: "btn btn-primary mb-3" %>
