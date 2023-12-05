@@ -13,7 +13,7 @@
         <h1 class="main-title"><strong>Découvez l'espace ressources</strong> </h1>
         <h2 class="second-title"></h2>
         <p class="main-subtitle">
-        Parce qu'ensemble, nous allons plus loin.
+        Partagez ici toutes vos connaissances
         </p>
       </div>
       <%= link_to courses_path, style: "text-decoration: none;", class: "button-link" do %>
@@ -24,7 +24,9 @@
     <div class="container chatroom"
       data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>">
-      <h2 id="chat">Silence de Stromae</h2>
+
+      <h2>Together, we go further</h2>
+
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
           <%= render "messages/message", message: message %>
