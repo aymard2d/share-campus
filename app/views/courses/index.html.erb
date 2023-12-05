@@ -4,12 +4,13 @@
       <div id="courses">
         <% if @courses.any? %>
           <% @courses.each do |course| %>
-            <h4><%= course.title %></h4>
+           
+           <h4><%= course.title %></h4>
             <p><%= course.date %></p>
             <p><%= course.summarize %></p>
             <p><%= course.category %></p>
             <p><%= course.user.email %><%= course.user.last_name %></p>
-            <img src="<%= image_path 'logo-pdf.jpg'%>">
+            <img src="<%= image_path 'logo-pdf.jpeg'%>">
             <p><%= cl_image_tag course.document.key, width: 200, height: 400,crop: :fill, format: :jpg %></p>
             <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/development/#{course.document.key}", target: :blank%>
 
