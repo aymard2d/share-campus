@@ -22,6 +22,6 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:title, :summarize, :category, :date)
+    params.require(:course).permit(:title, :summarize, :category, :date, document: [])
   end
 end
