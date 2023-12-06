@@ -2,7 +2,8 @@ class CoursesController < ApplicationController
 
   def index
     @course = Course.new
-    @courses = Course.all
+    @last_course = Course.last
+    @courses = Course.all.order("created_at DESC")
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR summarize ILIKE :query"
       @courses = @courses.where(sql_subquery, query: "%#{params[:query]}%")
@@ -12,10 +13,13 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.user = current_user
-    if @course.save
-      redirect_to courses_path
-    else
-      render :index, status: :unprocessable_entity
+    respond_to do |format|
+      if @course.save
+        format.html { redirect_to courses_path}
+        format.text { render partial: "courses/list", locals: {course: @course}, formats: [:html] }
+      else
+        render 'courses/index', status: :unprocessable_entity
+      end
     end
   end
 
