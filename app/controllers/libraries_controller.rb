@@ -3,5 +3,6 @@ class LibrariesController < ApplicationController
     @library = Library.new
     @library = Library.find(params[:id])
     @message = Message.new
+    @user = current_user
   end
 end
