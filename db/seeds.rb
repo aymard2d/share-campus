@@ -17,10 +17,10 @@ User.destroy_all
 Library.destroy_all
 
 
-user1 = User.create!(first_name: "Juju", last_name: "Magic", email: "julien@share.fr", password: 123444)
-user2 = User.create!(first_name: "Sarah", last_name: "LaReusta", email: "sarah@share.fr", password: 123444)
-user3 = User.create!(first_name: "Yac", last_name: "Starzou", email: "yacine@share.fr", password: 123444)
-user4 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", password: 123444)
+user1 = User.create!(first_name: "Juju", last_name: "Magic", email: "julien@share.fr", batch: 1438, password: 123444)
+user2 = User.create!(first_name: "Sarah", last_name: "LaReusta", email: "sarah@share.fr", batch: 1438, password: 123444)
+user3 = User.create!(first_name: "Yac", last_name: "Starzou", email: "yacine@share.fr", batch: 1438, password: 123444)
+user4 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", batch: 1438, password: 123444)
 
 
 course1 = Course.create!(user_id: user1.id, title: 'Tuto cuisson purée', summarize: 'Un incroyable open-office sur les méthodes de cuissons les plus Texanaises de tout le Texas, certifié par les Texans eux même.')
