@@ -11,24 +11,24 @@
       <% end %>
     </div>
   </div>
-
-  <div id="courses" data-controller="add-course" data-add-course-target="list">
-    <% if @courses.any? %>
-      <% @courses.each do |course| %>
-        <div class="list-card">
-          <h4><%= course.title %></h4>
-          <p><%= course.date %></p>
-          <p><%= course.summarize %></p>
-          <p><%= course.category %></p>
-          <p><%= course.user.email %><%= course.user.last_name %></p>
-          <img src="<%= image_path 'logo-pdf.jpg'%>">
-        </div>
+  <div class="all-cards">
+    <div id="courses" data-controller="add-course" data-add-course-target="list">
+      <% if @courses.any? %>
+        <% @courses.each do |course| %>
+          <div class="list-card" >
+            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.webp)">
+              <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
+              <h3 class="card-subtitle"> <%= course.title %></h3>
+              <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
+              <p class="card-text"><%= course.date %></p>
+              <button class="button-62 btn-file" role="button"> Voir plus</button>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <em>Désolé, aucun sujet de cours n'a été trouvé.</em>
       <% end %>
-    <% else %>
-      <em>Désolé, aucun sujet de cours n'a été trouvé.</em>
-    <% end %>
+    </div>
     <%= render "courses/visualisation_card"%>
   </div>
 </div>
-
-
