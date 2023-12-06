@@ -13,9 +13,9 @@
 # Création d'utilisateurs
 
 Course.destroy_all
-# User.destroy_all
+User.destroy_all
 
-user1 = User.create!(email: "julientest@syja.comm", password: 123444)
+user1 = User.create!(email: "julientest@syja.fr", password: 123444)
 
 course1 = Course.create!(user_id: user1.id, title: 'Tuto cuisson purée', summarize: 'Un incroyable open-office sur les méthodes de cuissons les plus Texanaises de tout le Texas, certifié par les Texans eux même.')
 course2 = Course.create!(user_id: user1.id, title: 'Les pingouins conspirationnistes', summarize: "Une enquête approfondie sur une colonie de pingouins qui semblent croire en des théories du complot étranges et complotent secrètement pour prendre le contrôle de l'Antarctique.")

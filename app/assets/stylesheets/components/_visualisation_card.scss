@@ -1,0 +1,66 @@
+.card-visualisation {
+  background-color: white;
+  box-shadow: 255 255 255 0,5;
+  height: 100%;
+  width: 250px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .title-card-visualisation {
+    font-size: 18px;
+  }
+
+  .summarize {
+    font-size: 14px;
+  }
+
+  .pdf {
+    margin: 20px;
+  }
+}
+
+.main-container-file {
+  width: 250px;
+  height: auto;
+
+  .file-download {
+    background-color: white;
+    box-shadow: 255 255 255 0,5;
+    height: 250px;
+    width :250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    margin: 10px;
+
+    .btn-file {
+      font-family: 'Bowlby One SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 23px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .icon-file {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  .form-file {
+    width: 25Opx;
+    height: 400px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 20px;
+  }
+}
