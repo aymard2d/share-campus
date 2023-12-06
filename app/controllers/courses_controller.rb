@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
         format.html { redirect_to courses_path}
         format.text { render partial: "courses/list", locals: {course: @course}, formats: [:html] }
       else
-        render 'courses/index', status: :unprocessable_entity
+        render "courses/add_course_form", status: :unprocessable_entity
       end
     end
   end
