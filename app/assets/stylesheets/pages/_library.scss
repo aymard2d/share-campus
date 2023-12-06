@@ -1,7 +1,7 @@
 .banner-lib {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 0;
   height: 500px;
 }
 
@@ -18,7 +18,7 @@
   color: rgba(134, 217, 149, 0.951);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
-  font-weight: regular; 
+  font-weight: regular;
 }
 
 .main-subtitle {
@@ -33,5 +33,27 @@
 
 .baseline-container {
   text-align: center;
+
+}
+
+.bibliostyle {
+  width: 95%;
+  height: 97%;
+  margin-left: 20px;
+}
+
+
+.fontbackground {
+
+
+  width: 1400px;
+  height: 800px;
+  left: 54px;
+  top: 212px;
+  margin-left: 10px;
+
+  background-color: linear-gradient(180deg, rgba(156, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%);
+  border-radius: 30px;
+  position: absolute;
 
 }
