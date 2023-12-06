@@ -54,14 +54,15 @@ display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
+text-decoration: none;
 }
 
 .container-homepage {
   //position: relative;
   width: 100%; /* Ajustez la largeur de votre conteneur selon vos besoins */
   //height: 300px; /* Ajustez la hauteur de votre conteneur selon vos besoins */
-  border: 1px solid #ccc; /* Juste pour visualiser le conteneur */
-  margin-top: 150px;
+  //border: 1px solid #ccc; /* Juste pour visualiser le conteneur */
+  //margin-top: 150px;
   background-color: white;
 }
 
