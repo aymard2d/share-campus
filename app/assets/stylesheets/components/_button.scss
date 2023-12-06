@@ -72,3 +72,76 @@
   background-color: #0B1B29;
   transform: scale(1.1);
 }
+
+
+.bouton-envoyer {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.bouton-envoyer {
+  --primary-color: #5a5a5a;
+  --hovered-color: #151515;
+  position: absolute;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  left: 88%;
+  margin-top: 12px;
+  border-radius: 5px;
+
+}
+
+.bouton-envoyer p {
+  margin: 0;
+  position: relative;
+  font-size: 15px;
+  color: var(--primary-color);
+}
+
+.bouton-envoyer::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.bouton-envoyer p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Envoyer";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.bouton-envoyer:hover::after {
+  width: 100%;
+}
+
+.bouton-envoyer:hover p::before {
+  width: 100%;
+}
+
+.bouton-envoyer:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.bouton-envoyer svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
