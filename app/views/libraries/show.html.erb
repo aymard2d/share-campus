@@ -1,24 +1,26 @@
 <div class="container-site">
   <div>
-    <h1 style="color: #F9CE06">Découvrez l'espace ressource ci-dessous !</h1>
-</div>
-  <div class="library-container">
-    <h2 style="color: #FB5645">Bienvenue à la bibliothèque, <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h2>
-    <div class="banner-lib fontbackground" style="background: linear-gradient(180deg, rgba(186, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%)">
-      <div class="bibliostyle" style="background-image: url(<%= image_path 'biblio.png' %>)">
-        <div class="baseline-container">
-        </div>
+    <h1 class="discover" style="color: #F9CE06">Découvrez l'espace ressource ci-dessous !</h1>
+  </div>
+    <div class="library-container">
+      <div>
+        <h2 class= "welcome" style="color: #FB5645">Bienvenue à la bibliothèque, <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h2>
+        <div class="banner-lib fontbackground" style="background: linear-gradient(180deg, rgba(186, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%)">
+          <div class="bibliostyle" style="background-image: url(<%= image_path 'biblio.png' %>)">
+            <div class="baseline-container">
 
-        <%= link_to courses_path, style: "text-decoration: none;", class: "button-juju" do %>
-          <button class="buttonjuju" role="button"><span>Espace ressources</span></button>
-        <% end %>
+
+              <%= link_to courses_path, style: "text-decoration: none;", class: "button-juju" do %>
+                <button class="buttonjuju" role="button"><span>Espace ressources</span></button>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="container chatroom"
+      <div class="container chatroom"
       data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>">
 
-      <h2>Together, we go further</h2>
 
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
@@ -32,11 +34,11 @@
       %>
         <%= f.input :content,
           label: false,
-          placeholder: "Share ton message",
-          wrapper_html: {class: "flex-grow-1"}
+          placeholder: "Share ton message...",
+          input_html: { id: "envoyer" }
         %>
         <%= f.submit "Send", class: "btn btn-primary mb-3" %>
       <% end %>
-      </div>
+    </div>
   </div>
 </div>
