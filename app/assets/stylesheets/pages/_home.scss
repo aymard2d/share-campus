@@ -1,1 +1,75 @@
-// Specific CSS for your home-page
+body {
+background-color: white;
+}
+
+.decouvrir {
+color: #F9CE06;
+font-family: Bowlby One SC;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.apprendre {
+color: #FB5645;
+font-family: Bowlby One SC;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.partager {
+color: #BA2749;
+font-family: Bowlby One SC;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.clic {
+color: #4D98A2;
+font-family: Bowlby One SC;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.btn-home {
+width: 389px;
+height: 75px;
+flex-shrink: 0;
+border-radius: 35px;
+background: linear-gradient(180deg, #148A99 0%, rgba(20, 138, 153, 0.67) 100%);
+color: #FFF;
+font-family: Bowlby One SC;
+font-size: 24px;
+font-style: normal;
+font-weight: 350;
+line-height: normal;
+}
+
+.container-homepage {
+  //position: relative;
+  width: 100%; /* Ajustez la largeur de votre conteneur selon vos besoins */
+  //height: 300px; /* Ajustez la hauteur de votre conteneur selon vos besoins */
+  border: 1px solid #ccc; /* Juste pour visualiser le conteneur */
+  margin-top: 150px;
+}
+
+.image-accueil {
+  width: 711px;
+  height: 364px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.image-homepage {
+  width: 542px;
+  height: 452px;
+  flex-shrink: 0;
+  object-fit: cover;
+}

@@ -1,0 +1,13 @@
+
+<div>
+    <%= simple_form_for (@course), html: {class: @course.errors.any? ? "" : "d-none form-file container ", data: { add_course_target: "form", action: "submit->add-course#add turbo:submit-end->add-course#resetForm" }} do |f| %>
+      <%= f.input :title %>
+      <%= f.input :summarize, as: :text %>
+      <%= f.input :category, collection: ["Ruby", "Javascript", "HTML", "CSS3", "Rails", "Bootstrap"] %>
+      <%= f.input_field :date, as: :hidden, value: Date.today %>
+      <%= f.input_field :user_id, as: :hidden, value: params[:id] %>
+      <%= f.input :document, as: :file, label: "Selectionne un document" %>
+
+      <%= f.submit "Créer la course" %>
+    <% end %>
+  </div>

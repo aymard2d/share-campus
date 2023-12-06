@@ -1,6 +1,18 @@
-<h1>Bienvenue sur la home de SHARE</h1>
-<p>Le campus virtuel qui vous redonne l'envie d'étudier</p>
 
-<%= link_to "Se rendre aux archives", courses_path %>
-<%= link_to "Se rendre à la bibliothèque", library_path(@library) %>
-
+<div class="container-homepage position-relative">
+  <div class="d-flex justify-content-center align-items-center text-justify vh-100">
+    <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2" class="image-homepage">
+    <div class="mb-5">
+      <h2 class="decouvrir">DÉCOUVRIR,</h2>
+      <h2 class="apprendre">APPRENDRE,</h2>
+      <h2 class="partager">PARTAGER...</h2>
+      <h2 class="clic">EN 1 SEUL CLIC !</h2>
+    </div>
+    <%= link_to "J'AI UNE IDÉE À PARTAGER", courses_path, class: "btn-home btn-primary" %>
+  </div>
+  <%= link_to "ALLER À LA BIBLIOTHÈQUE", library_path(@library), class: "btn-home btn-secondary" %>
+  <div class="d-flex justify-content-between align-items-center text-justify vh-100">
+    <p class="homepage">QUI SOMMES NOUS</p>
+    <img src="https://i.postimg.cc/qvTgG1cy/home-1.png" alt="Image accueil 1" class="image-accueil">
+  </div>
+</div>
