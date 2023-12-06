@@ -1,7 +1,7 @@
 /* CSS */
 .button-55 {
-  align-self: center;
-  background-color: #fff;
+  align-items: center;
+  background-color: #0B1B29;
   background-image: none;
   background-position: 0 90%;
   background-repeat: repeat no-repeat;
@@ -11,7 +11,7 @@
   border-width: 2px;
   box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
   box-sizing: border-box;
-  color: #41403e;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: Neucha, sans-serif;
@@ -28,6 +28,8 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  display: flex;
+  justify-content: center;
 }
 
 .button-55:hover {
@@ -40,7 +42,135 @@
 }
 
 .button-link {
-  padding-top: 250px;
-  margin-left: 350px;
   justify-content: center;
+}
+
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+=======
+  display: flex;
+  position: absolute;
+  top: 65%;
+  left: 40%;
+}
+
+
+/* Rectangle 92 */
+.buttonjuju{
+
+  width: 301px;
+  height: 100px;
+  background: #09233a;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 62%;
+  left: 40%;
+  color: #fff;
+  align-items: center;
+  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s ease-in-out; /* Groupement des propriétés de transition */
+}
+
+.buttonjuju:hover {
+  background-color: #0B1B29;
+  transform: scale(1.1);
+}
+
+
+.bouton-envoyer {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.bouton-envoyer {
+  --primary-color: #5a5a5a;
+  --hovered-color: #151515;
+  position: absolute;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  left: 88%;
+  margin-top: 12px;
+  border-radius: 5px;
+
+}
+
+.bouton-envoyer p {
+  margin: 0;
+  position: relative;
+  font-size: 15px;
+  color: var(--primary-color);
+}
+
+.bouton-envoyer::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.bouton-envoyer p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Envoyer";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.bouton-envoyer:hover::after {
+  width: 100%;
+}
+
+.bouton-envoyer:hover p::before {
+  width: 100%;
+}
+
+.bouton-envoyer:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.bouton-envoyer svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
 }
