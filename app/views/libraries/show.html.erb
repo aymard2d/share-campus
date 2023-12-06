@@ -1,30 +1,27 @@
-<div class="container">
-  <h1>Bienvenue à la bibliothèque</h1>
-  <p>Dans cet espace, vous allez pouvoir retrouver <a href="#" class="">l'espace ressources</a> dans lequel vous pourrez consulter, télécharger et uploader vos cours.
-    <br>
-    Des <a href="#" class="">salles d'entraide</a> sont également mises à votre disposition pour pouvoir travailler en groupe.
-    <br>
-    N'hésitez pas à utilser le <a href="#" id="tchat">tchat</a> pour poser des questions ou chercher des partenaires de travail.
-    Merci de rester silencieux dans les espaces communs afin de permettre à chacun de se concentrer. 
-  </p>
-  <div class="library-container">
-    <div class="banner-lib" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'bibli-2.jpg' %>)">
-      <div class="baseline-container">
-        <h1 class="main-title"><strong>Découvez l'espace ressources</strong> </h1>
-        <h2 class="second-title"></h2>
-        <p class="main-subtitle">
-        Parce qu'ensemble, nous allons plus loin.
-        </p>
+<div class="container-site">
+  <div>
+    <h1 class="discover" style="color: #F9CE06">Découvrez l'espace ressource ci-dessous !</h1>
+  </div>
+    <div class="library-container">
+      <div>
+        <h2 class= "welcome" style="color: #FB5645">Bienvenue à la bibliothèque,  <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h2>
+        <div class="banner-lib fontbackground" style="background: linear-gradient(180deg, rgba(186, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%)">
+          <div class="bibliostyle" style="background-image: url(<%= image_path 'biblio.png' %>)">
+            <div class="baseline-container">
+
+
+              <%= link_to courses_path, style: "text-decoration: none;", class: "button-juju" do %>
+                <button class="buttonjuju" role="button"><span>Espace ressources</span></button>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
-      <%= link_to courses_path, style: "text-decoration: none;", class: "button-link" do %>
-        <button class="button-55" role="button"><span>Espace ressources</span></button>
-      <% end %>
-    </div>
-    
-    <div class="container chatroom"
+      <div class="container chatroom"
       data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>">
-      <h2>Silence de Stromae</h2>
+
+
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
           <%= render "messages/message", message: message %>
@@ -37,11 +34,16 @@
       %>
         <%= f.input :content,
           label: false,
-          placeholder: "Veuillez entrer votre message",
-          wrapper_html: {class: "flex-grow-1"}
+          placeholder: "Share ton message...",
+          input_html: { id: "envoyer" }
         %>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <button class="bouton-envoyer" type="submit">
+        <p>Envoyer</p>
+          <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+          </svg>
+        </button>
       <% end %>
-      </div>
+    </div>
   </div>
 </div>

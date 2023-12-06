@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :courses
-  has_many :messages
+  has_many :messages, dependent: :destroy
 end
