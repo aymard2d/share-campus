@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: #607b7d2e;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
