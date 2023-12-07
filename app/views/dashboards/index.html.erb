@@ -1,0 +1,21 @@
+
+<h1>Vos cours :</h1>
+<div class="dashboard-main">
+  <div class="dashboard-cours">
+  <% @user_courses.each do |course| %>
+  <div class="cours-details">
+    <ul style="list-style-type: none;">
+      <div class="cours-li">
+        <li><%= course.title %></li>
+        <li><%= course.category %></li>
+        <li><%= course.date %></li>
+        <li><%= cl_image_tag course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></li>
+      </div>
+    </ul>
+  </div>
+  <% end %>
+  </div>
+  <div class="dashboard-infos">
+      <%= image_tag("students.jpg", class: "students-img") %>
+  </div>
+</div>
