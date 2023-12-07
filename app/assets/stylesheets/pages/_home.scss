@@ -2,80 +2,128 @@ body {
 background-color: white;
 }
 
-.decouvrir {
-color: #F9CE06;
-font-family: Bowlby One SC;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+h2 {
+  font-family: Bowlby One SC;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+
+    &.apprendre {
+      color: #FB5645;
+    }
+
+    &.partager {
+      color: #BA2749;
+    }
+
+    &.clic {
+      color: #4D98A2;
+    }
+
+    &.decouvrir {
+      color: #F9CE06;
+    }
 }
 
-.apprendre {
-color: #FB5645;
-font-family: Bowlby One SC;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.homepage-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-.partager {
-color: #BA2749;
-font-family: Bowlby One SC;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.image-laptop {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-left: 20px;
 }
 
-.clic {
-color: #4D98A2;
-font-family: Bowlby One SC;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.image-teacher {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  margin-top: 20px;
 }
 
-.btn-home {
-width: 389px;
-height: 75px;
-flex-shrink: 0;
-border-radius: 35px;
-background: linear-gradient(180deg, #148A99 0%, rgba(20, 138, 153, 0.67) 100%);
-color: #FFF;
-font-family: Bowlby One SC;
-font-size: 24px;
-font-style: normal;
-font-weight: 350;
-line-height: normal;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-text-decoration: none;
+.keywords {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  padding-left: 40px;
+  padding-top: 40px;
+  margin-left: 20px;
+  margin-top: 200px;
 }
 
-.container-homepage {
-  //position: relative;
-  width: 100%; /* Ajustez la largeur de votre conteneur selon vos besoins */
-  //height: 300px; /* Ajustez la hauteur de votre conteneur selon vos besoins */
-  //border: 1px solid #ccc; /* Juste pour visualiser le conteneur */
-  //margin-top: 150px;
-  background-color: white;
+.baseline {
+  grid-column: 3/4;
+  grid-row: 1/2;
 }
 
-.image-accueil {
-  width: 711px;
-  height: 364px;
-  flex-shrink: 0;
-  object-fit: cover;
+.activities {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding-left: 20px;
+  padding-top: 50px;
+  margin-top:20px;
 }
 
-.image-homepage {
-  width: 542px;
-  height: 452px;
-  flex-shrink: 0;
-  object-fit: cover;
+h1 {
+  color: #4D98A2;
+  font-family: 'Bowlby One SC';
+  border: solid 5px white;
+  margin-right: 10px;
+  margin-top: 5px;padding: 10px;
+}
+
+.btn-resources {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.bouton-ressources {
+  margin-left: 120px;
+  font-size: xx-large;
+}
+
+
+.btn-library {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+/* CSS */
+.button-89 {
+  font-family: 'Bowlby One SC';
+  color:#148A99;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
 }

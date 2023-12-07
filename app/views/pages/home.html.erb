@@ -1,18 +1,35 @@
-
-<div class="container-homepage position-relative">
-  <div class="d-flex justify-content-center align-items-center text-justify vh-100">
-    <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2" class="image-homepage">
-    <div class="mb-5">
-      <h2 class="decouvrir">DÉCOUVRIR,</h2>
-      <h2 class="apprendre">APPRENDRE,</h2>
-      <h2 class="partager">PARTAGER...</h2>
-      <h2 class="clic">EN 1 SEUL CLIC !</h2>
-    </div>
-    <%= link_to "J'AI UNE IDÉE À PARTAGER", courses_path, class: "btn-home btn-primary" %>
+<div class="homepage-container">
+  <div class="image-laptop">
+    <img src="https://i.postimg.cc/qvTgG1cy/home-1.png" alt="Image accueil 1", class= "dimensions-laptop">
   </div>
-  <%= link_to "ALLER À LA BIBLIOTHÈQUE", library_path(@library), class: "btn-home btn-secondary" %>
-  <div class="d-flex justify-content-between align-items-center text-justify vh-100">
-    <p class="homepage">QUI SOMMES NOUS</p>
-    <img src="https://i.postimg.cc/qvTgG1cy/home-1.png" alt="Image accueil 1" class="image-accueil">
+  <div class="image-teacher">
+    <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2", class= "dimensions-teacher">
+  </div>
+  <div class="baseline">
+    <h1>Bienvenue sur le campus</h1>
+    <p class="description ml3">Share est le premier campus virtuel créé pour les étudiants par des étudiants.
+      <br>Grâce à Share, vous pourrez collaborer, échanger, tisser du lien et ainsi améliorer votre expérience étudiante.
+      <br>
+      <br>Bonne visite !
+    </p>
+  </div>
+  <div class="activities">
+    <h1>Ne ratez aucun évènement !</h1>
+    <p class="description ml3">Retrouvez toutes les activités organisées par les étudiants ou le corps enseignant.
+      <br>C'est l'occasion de rencontrer de nouvelles personnes, d'améliorer vos connaissances et vos compétences et se détendre.
+      <br>
+      <br>N'oubliez pas d'aller consulter la liste complète des activités et des ajouter à votre agenda !
+    </p>
+  </div>
+  <div class="mb-5 keywords">
+    <h2 class="decouvrir">DÉCOUVRIR</h2>
+    <h2 class="apprendre">APPRENDRE</h2>
+    <h2 class="partager">PARTAGER</h2>
+  </div>
+  <div class="btn-resources bouton-ressources">
+    <%= link_to "Rendez-vous à l'espace ressources", courses_path, class: "button-89 text-decoration-none" %>
+  </div>
+  <div class="btn-library bouton-bibli">
+  <%= link_to "Rendez-vous à la bibliothèque", library_path(@library), class: "button-89 text-decoration-none" %>
   </div>
 </div>
