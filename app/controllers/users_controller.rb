@@ -5,3 +5,6 @@ class UsersController < ApplicationController
   def show
   end
 end
+
+# Animal = course
+# booking = libraries

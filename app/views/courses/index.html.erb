@@ -1,22 +1,26 @@
 <div class="courses-container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: courses_path, method: :get, class: "d-flex" do %>
+    <div class="row justify-content-center input-group mb-4 border rounded-pill p-1">
+      <%= form_with url: courses_path, method: :get, class: "d-flex search-bar" do %>
+
         <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Rechercher un cours"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          params[:query],
+          class: "form-control bg-none border-0 search",
+          placeholder: "Rechercher un cours"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
+          <i class="fa fa-search"></i>
+        <% end%>
       <% end %>
     </div>
+
   </div>
   <div class="all-cards" data-controller="display-visuel" data-controller="add-course">
+
     <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
           <div class="list-card" >
-            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path 'img-card2.jpeg' %>)">
+            <div class="card-img" style="background-image: url(<%= image_path 'img-card2.jpeg' %>)">
               <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
@@ -26,7 +30,7 @@
           </div>
         <% end %>
       <% else %>
-        <em>Désolé, aucun sujet de cours n'a été trouvé.</em>
+        <em> Désolé, aucun sujet de cours n'a été trouvé.</em>
       <% end %>
     </div>
     <%= render "courses/visualisation_card"%>

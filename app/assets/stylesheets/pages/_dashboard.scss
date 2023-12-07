@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+
+.dashboard-cours {
+  display: flex;
+  justify-content: flex-start; /* Aligne les éléments à gauche */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.cours-details {
+  list-style: none;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 11px 13px 12px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  padding: 16px;
+  width: 40%; /* Occupe 25% de la largeur */
+  text-align: center;
+  box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur */
+  height: 235px;
+
+}
+
+.cours-li {
+  margin-bottom: 10px;
+}
+
+.pdf {
+  width: 25%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+
+.dashboard-infos{
+  display: flex;
+  justify-content: flex-start; /* Aligne les éléments à gauche */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.dashboard-main{
+  display: flex;
+}
+
+
+.students-img{
+  width: 60%;
+  margin-left: auto;
+  margin-top: 36%;
+
+}
