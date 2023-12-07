@@ -1,6 +1,7 @@
-<div class="courses-container" data-cotroller="display-visuel">
+<div class="courses-container">
     <div class="row justify-content-center input-group mb-4 border rounded-pill p-1">
       <%= form_with url: courses_path, method: :get, class: "d-flex search-bar" do %>
+
         <%= text_field_tag :query,
           params[:query],
           class: "form-control bg-none border-0 search",
@@ -12,7 +13,9 @@
       <% end %>
     </div>
 
-  <div class="all-cards" data-controller="add-course">
+  </div>
+  <div class="all-cards" data-controller="display-visuel" data-controller="add-course">
+
     <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
@@ -22,7 +25,7 @@
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
-              <a class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
+              <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
             </div>
           </div>
         <% end %>
@@ -31,5 +34,6 @@
       <% end %>
     </div>
     <%= render "courses/visualisation_card"%>
+    <%= render "courses/test"%>
   </div>
 </div>

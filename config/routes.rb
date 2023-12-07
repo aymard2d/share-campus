@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :dashboards, only: [:show, :index]
   # root "posts#index"
-  resources :courses, only: [:index, :create]
+  resources :courses, only: [:index, :create, :show]
   resources :libraries, only: :show do
     resources :messages, only: :create
   end

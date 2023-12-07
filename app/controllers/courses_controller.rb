@@ -23,6 +23,11 @@ class CoursesController < ApplicationController
     end
   end
 
+  def show
+    @course = Course.includes(:user).find(params[:id])
+
+  end
+
   private
 
   def course_params
