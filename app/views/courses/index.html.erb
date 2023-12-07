@@ -12,7 +12,6 @@
       <% end %>
     </div>
 
-
   <div class="all-cards" data-controller="add-course">
     <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
@@ -28,7 +27,7 @@
           </div>
         <% end %>
       <% else %>
-        <em>Désolé, aucun sujet de cours n'a été trouvé.</em>
+        <em> Désolé, aucun sujet de cours n'a été trouvé.</em>
       <% end %>
     </div>
     <%= render "courses/visualisation_card"%>
