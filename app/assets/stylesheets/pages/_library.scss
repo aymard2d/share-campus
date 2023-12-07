@@ -10,7 +10,7 @@
   color: rgb(189, 13, 13);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 42px;
-  font-weight: bold;
+  // font-weight: bold;
   justify-content: center;
 }
 
@@ -18,7 +18,7 @@
   color: rgba(134, 217, 149, 0.951);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
-  font-weight: regular;
+  // font-weight: regular;
 }
 
 .main-subtitle {
@@ -27,7 +27,7 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin: 10px ;
-  font-weight: bold;
+  // font-weight: bold;
 
 }
 
@@ -38,13 +38,14 @@
 
 .bibliostyle {
   width: 95%;
-  height: 97%;
+  height: 800px;
   margin-left: 20px;
+  background-size: cover;
+  background-position: center;
 }
 
 
 .fontbackground {
-
   width: 98%;
   margin-left: 10px;
   background-color: linear-gradient(180deg, rgba(156, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%);
