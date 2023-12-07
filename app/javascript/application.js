@@ -4,3 +4,5 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 import "@rails/actioncable"
+import DisplayVisuelController from "./controllers/display_visuel_controller.js"
+

@@ -16,6 +16,7 @@ Course.destroy_all
 User.destroy_all
 Library.destroy_all
 
+date = Date.today
 
 user1 = User.create!(first_name: "Juju", last_name: "Magic", email: "julien@share.fr", batch: 1438, password: 123444)
 user2 = User.create!(first_name: "Sarah", last_name: "LaReusta", email: "sarah@share.fr", batch: 1438, password: 123444)
@@ -23,11 +24,11 @@ user3 = User.create!(first_name: "Yac", last_name: "Starzou", email: "yacine@sha
 user4 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", batch: 1438, password: 123444)
 
 
-course1 = Course.create!(user_id: user1.id, title: 'Tuto cuisson purée', summarize: 'Un incroyable open-office sur les méthodes de cuissons les plus Texanaises de tout le Texas, certifié par les Texans eux même.')
-course2 = Course.create!(user_id: user1.id, title: 'Les pingouins conspirationnistes', summarize: "Une enquête approfondie sur une colonie de pingouins qui semblent croire en des théories du complot étranges et complotent secrètement pour prendre le contrôle de l'Antarctique.")
-course3 = Course.create!(user_id: user1.id, title: 'La grammaire extraterrestre', summarize: "Des linguistes découvrent une nouvelle langue extraterrestre qui utilise uniquement des emojis pour communiquer. Les chercheurs tentent de déchiffrer cette grammaire inhabituelle pour comprendre le message caché derrière les symboles." )
-course4 = Course.create!(user_id: user1.id, title: 'La révolution des objets inanimés', summarize: "Des objets inanimés, tels que des chaises, des stylos et des lampes, commencent soudainement à manifester une conscience et à revendiquer des droits. Une révolution inattendue des objets inanimés éclate, avec des manifestations dans les rues et des exigences pour une égalité des droits. Les humains doivent maintenant naviguer dans un monde où même les objets du quotidien ont une voix et des opinions.")
-course5 = Course.create!(user_id: user1.id, title: 'Le championnat du monde de lancer de spaghettis cuite', summarize: "Des athlètes du monde entier se rassemblent pour participer à un championnat où la discipline phare est le lancer de spaghettis. Les participants doivent maîtriser l'art du lancer précis et puissant pour remporter le titre de champion du monde. Des règles strictes régissent la taille, la cuisson et la sauce des spaghettis utilisés.")
+course1 = Course.create!(date:, user_id: user1.id, title: 'Tuto cuisson purée', summarize: 'Un incroyable open-office sur les méthodes de cuissons les plus Texanaises de tout le Texas, certifié par les Texans eux même.')
+course2 = Course.create!(date:, user_id: user1.id, title: 'Les pingouins conspirationnistes', summarize: "Une enquête approfondie sur une colonie de pingouins qui semblent croire en des théories du complot étranges et complotent secrètement pour prendre le contrôle de l'Antarctique.", category: "javascript")
+course3 = Course.create!(date:, user_id: user1.id, title: 'La grammaire extraterrestre', summarize: "Des linguistes découvrent une nouvelle langue extraterrestre qui utilise uniquement des emojis pour communiquer. Les chercheurs tentent de déchiffrer cette grammaire inhabituelle pour comprendre le message caché derrière les symboles.", category: "html" )
+course4 = Course.create!(date:, user_id: user1.id, title: 'La révolution des objets inanimés', summarize: "Des objets inanimés, tels que des chaises, des stylos et des lampes, commencent soudainement à manifester une conscience et à revendiquer des droits. Une révolution inattendue des objets inanimés éclate, avec des manifestations dans les rues et des exigences pour une égalité des droits. Les humains doivent maintenant naviguer dans un monde où même les objets du quotidien ont une voix et des opinions.", category: "css")
+course5 = Course.create!(date:, user_id: user1.id, title: 'Le championnat du monde de lancer de spaghettis cuite', summarize: "Des athlètes du monde entier se rassemblent pour participer à un championnat où la discipline phare est le lancer de spaghettis. Les participants doivent maîtriser l'art du lancer précis et puissant pour remporter le titre de champion du monde. Des règles strictes régissent la taille, la cuisson et la sauce des spaghettis utilisés.", category: "ruby")
 
 
 
