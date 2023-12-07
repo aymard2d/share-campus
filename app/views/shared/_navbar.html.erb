@@ -1,14 +1,15 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-container">
   <div class="container-fluid d-flex justify-content-center">
     <%= link_to root_path do %>
       <%= image_tag("share-logo.jpg", class: "navbar-logo") %>
     <% end %>
     <div class="pink-box">
       <div class=" blue-box">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <i><Home class="fa-solid fa-house home-logo navbar-brand"></i>
+        <%= link_to root_path do %>
+          <i><Home class="fa-solid fa-house home-logo"></i>
         <% end %>
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.qmul.ac.uk/share/media/blizard/images/SHARE-logo-header.png" />
+        <div class="share-txt">Share</div>
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.freepik.com/vecteurs-premium/avatar-jeune-homme-souriant-homme-moustache-barbe-brune-cheveux-portant-pull-jaune-sweat-shirt-3d-vecteur-personnes-illustration-personnage-style-minimal-dessin-anime_365941-860.jpg" />
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Mon dashboard</a>
           <a class="dropdown-item" href="#">Ma batch : </a>

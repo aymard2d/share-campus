@@ -1,6 +1,8 @@
-.navbar-lewagon {
+.navbar-container {
   justify-content: space-between;
   background: white;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,21 +13,26 @@
   width: 80px;
 }
 
-.navbar-brand {
-  position: absolute;
-  background-color: white;
-}
 /* Group 17 */
 
-
+.share-txt {
+  color:white;
+  left: 43%;
+  top: 5px;
+  font-size: xx-large;
+  position: absolute;
+  font-family: 'Bowlby One SC';
+  margin-right: 20px;
+}
 
 /* Rectangle 38 */
 .pink-box {
-  width: 80%;
-  height: 65px;
+  width: 65%;
+  height: 70px;
   background: linear-gradient(180deg, #FFE3E6 99.99%, rgba(18, 25, 37, 0) 100%);
   border-radius: 15px;
   padding: 5px 25px;
+  margin-top: 8px;
 }
 
 
