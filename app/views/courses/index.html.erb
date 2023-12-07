@@ -1,7 +1,6 @@
 <div class="courses-container">
     <div class="row justify-content-center input-group mb-4 border rounded-pill p-1">
       <%= form_with url: courses_path, method: :get, class: "d-flex search-bar" do %>
-
         <%= text_field_tag :query,
           params[:query],
           class: "form-control bg-none border-0 search",
@@ -12,14 +11,13 @@
         <% end%>
       <% end %>
     </div>
-
   </div>
-  <div class="all-cards" data-controller="display-visuel" data-controller="add-course">
 
+  <div class="all-cards" data-controller="display-visuel" data-controller="add-course">
     <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
-          <div class="list-card" >
+          <div class="list-card">
             <div class="card-img" style="background-image: url(<%= image_path 'img-card2.jpeg' %>)">
               <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
               <h3 class="card-subtitle"> <%= course.title %></h3>
