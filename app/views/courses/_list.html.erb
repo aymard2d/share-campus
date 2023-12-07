@@ -1,10 +1,9 @@
-<div class="card img-fluid list-card" style="width:500px">
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.webp" alt="Card image" style="width:100%">
-  <div class="card-img-overlay">
+<div class="list-card" >
+  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.webp)">
     <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
     <h3 class="card-subtitle"> <%= course.title %></h3>
-    <p class="card-text"><%= course.user.email %> <%= course.user.last_name %></p>
+    <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
     <p class="card-text"><%= course.date %></p>
-    <a href="#" class="btn btn-primary">Voir plus</a>
+    <a class="a-file" > Voir plus </a>
   </div>
 </div>

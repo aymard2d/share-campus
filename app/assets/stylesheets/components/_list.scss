@@ -1,12 +1,16 @@
-
+.courses-container {
+  margin: 15px 50px 15px 50px;
+}
 .all-cards {
   display: grid;
   grid-template-columns: 1fr auto;
+  margin-top: 10px;
 }
 #courses {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 
 .list-card {
@@ -30,9 +34,9 @@
 
 .card-title {
   margin-bottom: 10px;
-  color: #fc8c1d;;
+  color: #fc8c1d;
   font-size: 18px;
-  text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
+  text-shadow: 0.2px 0.2px 0.2px rgb(188, 187, 187);
 }
 
 .card-subtitle {
@@ -48,4 +52,9 @@
   margin-bottom: 5px;
   font-size: 15px;
   text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
+}
+
+.a-file {
+  text-decoration: none;
+  color: #fc8c1d;
 }
