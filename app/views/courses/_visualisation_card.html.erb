@@ -1,16 +1,19 @@
-<div class="card-visualisation"  >
-  <p><%= cl_image_tag @last_course.document.key, width: 150, height: 180,crop: :fill, format: :jpg, class:"pdf" %></p>
-  <h4 class="title-card-visualisation"> <%= Course.last.title%> </h4>
-  <p class="summarize"> <%= Course.last.summarize%> </p>
-  <h5> <%= Course.last.category%> </h5>
-  <p> <%= Course.last.user.email%> </p>
-  <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/development/#{@last_course.document.key}", target: :blank%>
-</div>
 
-<div class="main-container-file" >
-  <div class="file-download">
-    <img src="<%= image_path 'file.png'%>" class="icon-file" >
-    <button class="button-62 btn-file" data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
+
+  <div class="card-visualisation"  >
+    <p><%= cl_image_tag @last_course.document.key, width: 150, height: 180,crop: :fill, format: :jpg, class:"pdf" %></p>
+    <h4 class="title-card-visualisation"> <%= Course.last.title%> </h4>
+    <p class="summarize"> <%= Course.last.summarize%> </p>
+    <h5> <%= Course.last.category%> </h5>
+    <p> <%= Course.last.user.email%> </p>
+    <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/development/#{@last_course.document.key}", target: :blank%>
   </div>
-  <%= render 'courses/add_course_form'%>
-</div>
+
+  <div class="main-container-file" >
+    <div class="file-download">
+      <img src="<%= image_path 'file.png'%>" class="icon-file" >
+      <button class="button-62 btn-file" data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
+    </div>
+    <%= render 'courses/add_course_form'%>
+  </div>
+

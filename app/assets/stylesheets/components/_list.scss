@@ -1,5 +1,51 @@
+
+.all-cards {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+#courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 .list-card {
-  background-color: white;
-  width: 450px;
-  height: 450px;
+  width: 220px;
+  height: 220px;
+  border-radius: 4px;
+}
+
+.card-img {
+  width: 220px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card-title {
+  margin-bottom: 10px;
+  color: #fc8c1d;;
+  font-size: 18px;
+  text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
+}
+
+.card-subtitle {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  text-shadow: 0.3px 0.3px 0.3px rgb(97, 97, 97);
+}
+
+.card-text {
+  color: white;
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
 }
