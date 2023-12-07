@@ -15,8 +15,8 @@
     <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
-          <div class="list-card">
-            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.webp)">
+          <div class="list-card" >
+            <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path 'img-card2.jpeg' %>)">
               <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
