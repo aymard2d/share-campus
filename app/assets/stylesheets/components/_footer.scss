@@ -19,6 +19,11 @@ footer {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: 'Bowlby One SC';
+
+    &:hover {
+      color:rgb(255, 247, 229);
+    }
 }
 
 .button-54:active {
