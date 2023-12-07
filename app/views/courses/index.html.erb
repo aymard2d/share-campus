@@ -1,4 +1,4 @@
-<div class="container">
+<div class="courses-container" data-cotroller="display-visuel">
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
       <%= form_with url: courses_path, method: :get, class: "d-flex" do %>
@@ -11,8 +11,8 @@
       <% end %>
     </div>
   </div>
-  <div class="all-cards">
-    <div id="courses" data-controller="add-course" data-add-course-target="list">
+  <div class="all-cards" data-controller="add-course">
+    <div id="courses"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
           <div class="list-card" >
@@ -21,7 +21,7 @@
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
-              <button class="button-62 btn-file" role="button"> Voir plus</button>
+              <a class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
             </div>
           </div>
         <% end %>

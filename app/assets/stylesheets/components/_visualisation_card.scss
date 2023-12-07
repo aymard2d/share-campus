@@ -1,18 +1,21 @@
 .card-visualisation {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.447);
   box-shadow: 255 255 255 0,5;
-  height: 100%;
-  width: 250px;
-  margin: 10px;
-  padding: 20px;
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  .title-card-visualisation {
-    font-size: 18px;
+  .card-subtitle {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    text-shadow: 0.3px 0.3px 0.3px rgb(97, 97, 97);
   }
 
   .summarize {
@@ -20,47 +23,66 @@
   }
 
   .pdf {
-    margin: 20px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  .visu-text {
+    color: black;
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
   }
 }
 
 .main-container-file {
-  width: 250px;
-  height: auto;
+  width: 300px;
+  justify-items: center;
 
   .file-download {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.447);
     box-shadow: 255 255 255 0,5;
-    height: 250px;
-    width :250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-radius: 20px;
-    justify-content: center;
-    margin: 10px;
+    padding: 10px;
+
 
     .btn-file {
+      justify-self: end;
       font-family: 'Bowlby One SC';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      line-height: 23px;
-      margin-top: 20px;
-      margin-bottom: 30px;
+      line-height: 18px;
+
     }
 
     .icon-file {
-      height: 120px;
-      width: 120px;
+      align-self: center;
+      margin: 20px 5px 20px 5px;
+      height: 150px;
+      width: 150px;
     }
   }
 
   .form-file {
-    width: 25Opx;
-    height: 400px;
+    width: 300px;
     margin: 10px;
+    padding: 10px;
     background-color: white;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-course {
+    align-content: center;
+    font-family: 'Bowlby One SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 20px;
   }
 }
