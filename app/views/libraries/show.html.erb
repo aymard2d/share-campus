@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div>
-    <h1 class="discover" style="color: #F9CE06">Découvrez l'espace ressource ci-dessous !</h1>
+    <h1 class= "discover" style="color: #FB5645">Bienvenue à la bibliothèque,  <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h1>
   </div>
   <div class="library-container">
     <div>
-      <h2 class= "welcome" style="color: #FB5645">Bienvenue à la bibliothèque,  <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h2>
+      <h2 class= "welcome" style="color:rgb(77, 152, 162)">Découvrez l'espace ressource ci-dessous !</h2>
       <div class="banner-lib fontbackground" style="background: linear-gradient(180deg, rgba(186, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%)">
         <div class="bibliostyle" style="background-image: url(<%= image_path 'biblio.png' %>)">
           <div class="baseline-container">
@@ -33,13 +33,7 @@
           label: false,
           placeholder: "Share ton message...",
           input_html: { id: "envoyer" }
-      %>
-        <button class="bouton-envoyer" type="submit">
-        <p>Envoyer</p>
-        <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
-        </svg>
-        </button>
+      %> 
       <% end %>
     </div>
   </div>

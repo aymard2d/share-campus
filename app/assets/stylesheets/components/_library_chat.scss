@@ -1,5 +1,5 @@
 .chatroom {
-  margin-top: 4%;
+  margin-top: 13%;
   margin-bottom: 0.5rem;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: 500;
@@ -8,7 +8,8 @@
   width: 90%;
   background: linear-gradient(180deg, #C4C4C4 0%, rgba(196, 196, 196, 0.609375) 36.46%, rgba(196, 196, 196, 0) 100%);
   border-radius: 30px;
-  height: 80%;
+  height: 440px;
+
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
@@ -32,8 +33,7 @@
 }
 
 #envoyer{
-
-  width: 212%;
+  width: 240%;
   height: 155%;
   align-items: center;
 
