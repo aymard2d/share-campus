@@ -77,18 +77,15 @@
 /* Rectangle 92 */
 .buttonjuju{
   width: 19%;
-  height: 12%;
   background: #09233a;
   border-radius: 20px;
   justify-content: center;
-  display: flex;
-  position: absolute;
-  top: 62%;
-  left: 40%;
   color: #fff;
   align-items: center;
   transition: background-color 0.3s;
   transition: background-color 0.3s, transform 0.3s ease-in-out; /* Groupement des propriétés de transition */
+  height: 11vh;
+  margin-top: 45%;
 }
 
 .buttonjuju:hover {

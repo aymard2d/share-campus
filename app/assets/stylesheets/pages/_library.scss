@@ -45,28 +45,18 @@
 
 .fontbackground {
 
-
-  width: 65%;
-  height: 80%;
-  left: 54px;
-  top: 212px;
+  width: 98%;
   margin-left: 10px;
-
   background-color: linear-gradient(180deg, rgba(156, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%);
   border-radius: 30px;
-  position: absolute;
+  height: 80vh;
 
 }
 
 .welcome {
-  display: flex;
-  left: 25%;
-  position: absolute;
-  top: 16%;
+  text-align: center;
 }
 
 .discover {
-  display: flex;
-  left: 30%;
-  position: absolute;
+  text-align: center;
 }
