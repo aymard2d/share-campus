@@ -6,7 +6,7 @@
     <p class="summarize"> <%= Course.last.summarize%> </p>
     <h5 class="card-title"> <i class="fas fa-chart-pie"></i> <%= Course.last.category%> </h5>
     <p class="visu-text"> <%= Course.last.user.first_name%> <%= Course.last.user.last_name%> </p>
-    <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/development/#{@last_course.document.key}", target: :blank, class: "a-file"%>
+    <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/#{ENV["RAILS_ENV"]}/#{@last_course.document.key}", target: :blank, class: "a-file"%>
   </div>
 
   <div class="main-container-file">
