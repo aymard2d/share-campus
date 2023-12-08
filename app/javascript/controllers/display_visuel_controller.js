@@ -9,7 +9,7 @@ export default class extends Controller {
 
   display(event) {
     event.preventDefault()
-    this.previewTarget.classList.add("d-none");
-    this.courseTarget.classList.remove("d-none")
+    // this.previewTarget.classList.add("d-none");
+    // this.courseTarget.classList.remove("d-none")
   }
 }
