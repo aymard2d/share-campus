@@ -13,6 +13,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg", "~> 1.1"
+gem 'pry-byebug'
 gem "puma", ">= 5.0"
 gem "redis"
 gem "sassc-rails"

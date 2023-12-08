@@ -30,5 +30,4 @@ export default class extends Controller {
       event.target.reset()
       window.scrollTo(0, 10)
   }
-
 }

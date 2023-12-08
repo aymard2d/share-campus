@@ -2,14 +2,24 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="display-visuel"
 export default class extends Controller {
-  static targets = ['preview', 'course']
+  static targets = ['preview', 'course', "eva"]
   connect() {
-    console.log('connecté!')
   }
 
   display(event) {
+    console.log(event.currentTarget)
+    console.log(this.evaTarget.href)
+    console.log("ok")
     event.preventDefault()
-    // this.previewTarget.classList.add("d-none");
-    // this.courseTarget.classList.remove("d-none")
+    const url = event.currentTarget.href
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/plain" }
+    })
+      .then(response => response.text())
+      .then((data) => {
+        console.log(data)
+        this.previewTarget.outerHTML = data
+      })
   }
 }
