@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :courses
   has_many :messages, dependent: :destroy
+  has_many :likes
+  has_many :liked_courses, through: :likes, source: :courses # Retourne les instances de cours où les cours ont été likés
 end

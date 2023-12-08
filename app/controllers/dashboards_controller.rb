@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
   def index
     @courses = Course.all
     @user_courses = current_user.courses
+    @likes = Like.all
   end
 
   def show
@@ -10,5 +11,6 @@ class DashboardsController < ApplicationController
     @libraries = Library.where(user: current_user)
     @user = current_user
     @user_courses = Course.where(user_id: @user.id) if @user
+    @likes = Like.where(user: current_user)
   end
 end

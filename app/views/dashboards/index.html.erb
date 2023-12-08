@@ -14,6 +14,18 @@
     </ul>
   </div>
   <% end %>
+  <% @likes.each do |like| %>
+  <div class="cours-details">
+    <ul style="list-style-type: none;">
+      <div class="cours-li">
+        <li><%= like.course.title %></li>
+        <li><%= like.course.category %></li>
+        <li><%= like.course.date %></li>
+        <li><%= cl_image_tag like.course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></li>
+      </div>
+    </ul>
+  </div>
+  <% end %>
   </div>
   <div class="dashboard-infos">
       <%= image_tag("students.jpg", class: "students-img") %>

@@ -20,25 +20,21 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 group :development, :test do
   gem "dotenv-rails"
 
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[mri windows]
 end
 
 group :development do
-
   gem "web-console"
-
-
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
 
 group :test do
-
   gem "capybara"
   gem "selenium-webdriver"
 end
