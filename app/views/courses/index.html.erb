@@ -14,7 +14,7 @@
     </div>
 
   <div id="courses" data-controller="add-course">
-    <div class="all-cards"  data-controller="display-visuel"  data-add-course-target="list">
+    <div class="all-cards"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
           <div class="list-card" >
@@ -23,7 +23,7 @@
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
-              <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
+              <a href="#" class="a-file"  > Voir plus </a>
           </div>
         </div>
         <% end %>
