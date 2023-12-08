@@ -24,7 +24,7 @@
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
               <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
-              <%= button_to 'Ajouter aux favoris', courses_path, method: :post %>
+              <%= button_to 'Ajouter aux favoris ♡', course_likes_path(course), method: :post, class: "button-24 text-decoration-none"%>
           </div>
         </div>
         <% end %>

@@ -1,7 +1,7 @@
 
 <div class="main-card-content">
   <div class="card-visualisation"  >
-    <p><%= cl_image_tag @last_course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></p>
+    <%= cl_image_tag @last_course.document.key, width: 250, height: 300, format: :jpg, class:"pdf"%>
     <h4 class=" visu-subtitle"> <%= Course.last.title%> </h4>
     <p class="summarize"> <%= Course.last.summarize%> </p>
     <h5 class="card-title"> <i class="fas fa-chart-pie"></i> <%= Course.last.category%> </h5>
