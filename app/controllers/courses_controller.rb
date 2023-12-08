@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
     sql_subquery = "title ILIKE :query OR summarize ILIKE :query"
     @courses = @courses.where(sql_subquery, query: "%#{params[:query]}%")
   end
-
+  
   def create
     @course = Course.new(course_params)
     @course.user = current_user
@@ -17,15 +17,20 @@ class CoursesController < ApplicationController
         format.html { redirect_to courses_path }
         format.text { render partial: "courses/list", locals: { course: @course }, formats: [:html] }
       else
-        render "courses/add_course_form", status: :unprocessable_entity
+        render :index, status: :unprocessable_entity
       end
     end
   end
-
+  
   def show
-    @course = Course.includes(:user).find(params[:id])
-  end
 
+    @course = Course.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to courses_path}
+      format.text { render partial: "courses/visualisation_card", locals: {course: @course}, formats: [:html] }
+    end 
+  end
+  
   private
 
   def course_params
