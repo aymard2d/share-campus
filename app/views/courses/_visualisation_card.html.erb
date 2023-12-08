@@ -1,6 +1,6 @@
 
 <div class="main-card-content">
-  <div class="card-visualisation" data-display-visuel-target="preview" >
+  <div class="card-visualisation"  >
     <p><%= cl_image_tag @last_course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></p>
     <h4 class=" visu-subtitle"> <%= Course.last.title%> </h4>
     <p class="summarize"> <%= Course.last.summarize%> </p>
