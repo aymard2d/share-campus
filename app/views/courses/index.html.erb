@@ -12,6 +12,7 @@
         <% end%>
       <% end %>
     </div>
+
   <div>
     <div id="courses" data-controller="add-course display-visuel">
       <div class="all-cards" data-add-course-target="list">
@@ -25,7 +26,9 @@
                 <p class="card-text"><%= course.date %></p>
           
                 <%= link_to "voir plus", course_path(course.id), data: {display_visuel_target: "eva", action: "click->display-visuel#display" }  %>
+                <%= button_to 'Ajouter aux favoris ♡', course_likes_path(course), method: :post, class: "button-24 text-decoration-none"%>
             </div>
+
           </div>
           <% end %>
         <% else %>

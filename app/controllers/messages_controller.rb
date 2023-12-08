@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     if @message.save
       LibraryChannel.broadcast_to(
         @library,
-        render_to_string(partial: "messages/message", locals: {message: @message})
+        render_to_string(partial: "messages/message", locals: { message: @message })
       )
       head :ok
     else

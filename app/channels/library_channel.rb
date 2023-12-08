@@ -4,7 +4,6 @@ class LibraryChannel < ApplicationCable::Channel
     stream_for library
   end
 
-
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
