@@ -13,9 +13,8 @@
       <% end %>
     </div>
 
-  </div>>
-    <div id="courses" data-controller="add-course">
-  <div class="all-cards"  data-controller="display-visuel"  data-add-course-target="list">
+  <div id="courses" data-controller="add-course">
+    <div class="all-cards"  data-controller="display-visuel"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
           <div class="list-card" >
@@ -32,7 +31,7 @@
         <em> Désolé, aucun sujet de cours n'a été trouvé.</em>
       <% end %>
     </div>
-    <%= render "courses/visualisation_card"%>
-    <%= render "courses/test"%>
+      <%= render "courses/visualisation_card"%>
+      <%= render "courses/test"%>
   </div>
 </div>

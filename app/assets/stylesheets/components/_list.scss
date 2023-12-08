@@ -3,14 +3,15 @@
 }
 .all-cards {
   display: grid;
-  grid-template-columns: 1fr auto;
-  margin-top: 10px;
-}
-#courses {
-  display: flex;
-  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   justify-content: center;
+  margin-right: 10px;
+}
+#courses {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-top: 10px;
 }
 
 .list-card {
