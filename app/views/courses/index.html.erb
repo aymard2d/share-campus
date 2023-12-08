@@ -13,10 +13,9 @@
       <% end %>
     </div>
 
-  </div>
-  <div class="all-cards" data-controller="display-visuel" data-controller="add-course">
-
-    <div id="courses"  data-add-course-target="list">
+  </div>>
+    <div id="courses" data-controller="add-course">
+  <div class="all-cards"  data-controller="display-visuel"  data-add-course-target="list">
       <% if @courses.any? %>
         <% @courses.each do |course| %>
           <div class="list-card" >
@@ -26,8 +25,8 @@
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
               <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
-            </div>
           </div>
+        </div>
         <% end %>
       <% else %>
         <em> Désolé, aucun sujet de cours n'a été trouvé.</em>
