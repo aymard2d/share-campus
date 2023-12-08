@@ -23,7 +23,8 @@
               <h3 class="card-subtitle"> <%= course.title %></h3>
               <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
               <p class="card-text"><%= course.date %></p>
-              <a href="#" class="a-file"  > Voir plus </a>
+              <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
+              <%= button_to 'Ajouter aux favoris', courses_path, method: :post %>
           </div>
         </div>
         <% end %>
