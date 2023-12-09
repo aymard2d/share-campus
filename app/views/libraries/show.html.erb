@@ -15,26 +15,36 @@
         </div>
       </div>
     </div>
+
     <div class="container chatroom"
       data-controller="library-subscription"
-      data-library-subscription-library-id-value="<%= @library.id %>">
+      data-library-subscription-library-id-value="<%= @library.id %>"
+      data-library-subscription-current-user-id-value="<%= current_user.id %>">
 
+      <span id="welcome-chat">#chat-général</span>
 
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
+        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+            <%= render "messages/message", message: message %>
         <% end %>
-      </div>
 
+          </div>
 
-      <%= simple_form_for [@library, @message],
-        html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }, class: "d-flex"} do |f| %>
-        <%= f.input :content,
-          label: false,
-          placeholder: "Share ton message...",
-          input_html: { id: "envoyer" }
-      %> 
-      <% end %>
+        <div>
+          <%= simple_form_for [@library, @message],
+            html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }}, class: "input-place" do |f| %>
+              <%= f.input :content,
+                label: false,
+                placeholder: "Share ton message ici",
+                
+                input_html: { id: "envoyer" }
+              %> 
+            <% end %>
+        </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>

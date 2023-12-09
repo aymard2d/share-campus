@@ -2,7 +2,7 @@
   <small>
     <strong><%= message.user.first_name %></strong>
     <strong><%= message.user.last_name %></strong>
-    <i><%= message.created_at.in_time_zone('Europe/Paris').strftime("%a %e %b  at %k:%M ") %>:</i>
+    <i><%= message.created_at.in_time_zone('Europe/Paris').strftime(" at %k:%M ") %>:</i>
   </small>
   <p><%= message.content %></p>
 </div>

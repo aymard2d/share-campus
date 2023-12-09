@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     if @message.save
       LibraryChannel.broadcast_to(
         @library,
-        render_to_string(partial: "messages/message", locals: { message: @message })
+        message: render_to_string(partial: "message", locals: { message: @message }),
+        sender_id: @message.user.id
       )
       head :ok
     else
