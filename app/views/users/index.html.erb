@@ -1,1 +1,18 @@
-<h2>aymard le noobz</h2>
+<div class="user-main-container">
+  <div class="user-cards">
+    <% @users.each do |user|  %>
+      <% if user.batch = current_user.batch%>
+        <div class="user-card">
+            <%= image_tag "avatar-home.avif", class: "avatar-large", alt: "avatar-large" %>
+          <h5 class="user-title">
+            <%= user.first_name %>
+          </h5>
+          <h5 class="user-title">
+            <%= user.last_name %>
+          </h5>
+          <h6> #<%= user.batch %></h6>
+      <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
