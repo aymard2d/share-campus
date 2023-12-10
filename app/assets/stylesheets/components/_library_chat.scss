@@ -9,13 +9,6 @@
   background: linear-gradient(180deg, #C4C4C4 0%, rgba(196, 196, 196, 0.609375) 36.46%, rgba(196, 196, 196, 0) 100%);
   border-radius: 30px;
   height: 400px;
-
-    &.p {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: white;
-        padding-left: 0px;
-    }
 }
 
   h1 {
@@ -38,9 +31,6 @@
     grid-template-columns: 4-6
   ;
 
-  .input-place {
-    position: sticky;
-  }
     .form-group {
       margin-bottom: 0;
     }
@@ -73,10 +63,10 @@
 
 // To style the message itself
 .sender-style, .receiver-style {
-  max-width: 400px;
+  max-width: 75%;
   border-radius: 7px;
   padding: 0px;
-  min-height: 79px;
+  min-height: 50px;
 }
 
 .sender-style {
