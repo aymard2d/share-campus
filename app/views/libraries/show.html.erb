@@ -1,10 +1,14 @@
 <div class="container-fluid">
   <div>
-    <h2 class= "discover" style="color: #FB5645">Bienvenue à la bibliothèque,  <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %></h2>
+    <h2 class= "discover" style="color: #FB5645">
+      Bienvenue à la bibliothèque,  <%= content_tag :span, current_user.first_name, style: "color: #BA2749;" %>
+    </h2>
   </div>
   <div class="library-container">
     <div>
-      <h4 class= "welcome" style="color:rgb(77, 152, 162)">Partagez vos connaissances</h4>
+      <h4 class= "welcome" style="color:rgb(77, 152, 162)">
+        Partagez vos connaissances
+      </h4>
       <div class="banner-lib fontbackground" style="background: linear-gradient(180deg, rgba(186, 39, 73, 0.62) 0%, rgba(245, 201, 0, 0) 100%)">
         <div class="bibliostyle" style="background-image: url(<%= image_path 'biblio.png' %>)">
           <div class="baseline-container">
@@ -15,26 +19,28 @@
         </div>
       </div>
     </div>
+
     <div class="container chatroom"
       data-controller="library-subscription"
-      data-library-subscription-library-id-value="<%= @library.id %>">
+      data-library-subscription-library-id-value="<%= @library.id %>"
+      data-library-subscription-current-user-id-value="<%= current_user.id %>">
 
+      <span id="welcome-chat">#chat-général</span>
 
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
-          <%= render "messages/message", message: message %>
+          <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+            <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+              <%= render "messages/message", message: message %>
+            </div>
+          </div>
         <% end %>
       </div>
-
-
-      <%= simple_form_for [@library, @message],
-        html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }, class: "d-flex"} do |f| %>
-        <%= f.input :content,
-          label: false,
-          placeholder: "Share ton message...",
-          input_html: { id: "envoyer" }
-      %> 
-      <% end %>
+      
+        <%= simple_form_for [@library, @message],
+          html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }} do |f| %>
+            <%= f.input :content, label: false, placeholder: "Share ton message ici", input_html: { id: "envoyer" } %> 
+        <% end %>
     </div>
   </div>
 </div>

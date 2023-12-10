@@ -1,5 +1,5 @@
 .chatroom {
-  margin-top: 13%;
+  margin-top: 54px;
   margin-bottom: 0.5rem;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: 500;
@@ -8,7 +8,8 @@
   width: 90%;
   background: linear-gradient(180deg, #C4C4C4 0%, rgba(196, 196, 196, 0.609375) 36.46%, rgba(196, 196, 196, 0) 100%);
   border-radius: 30px;
-  height: 440px;
+  height: 400px;
+}
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -17,7 +18,7 @@
   }
 
   .messages {
-    height: 107%;
+    height: 400px;
     overflow: scroll;
     padding: 1rem;
   }
@@ -25,15 +26,25 @@
   #new_message {
     border-top: 1px solid $gray-200;
     padding: 1rem;
+    color: white;
+    grid-template-rows: 3-4;
+    grid-template-columns: 4-6
+  ;
 
     .form-group {
       margin-bottom: 0;
     }
   }
+
+#welcome-chat {
+  font-size: x-large;
+  color: white;
+  border-bottom: solid;
+  padding: 0px 125px;
 }
 
 #envoyer{
-  width: 210%;
+  width: 100%;
   height: 120%;
   align-items: center;
 
@@ -44,7 +55,27 @@
   font-size: 14px;
 }
 
+// To style the wrapping div
+.message-row {
+  margin-bottom: 10px;
+  padding: 8px;
+}
 
+// To style the message itself
+.sender-style, .receiver-style {
+  max-width: 75%;
+  border-radius: 7px;
+  padding: 0px;
+  min-height: 50px;
+}
+
+.sender-style {
+  background-color: rgb(31, 126, 138);
+}
+
+.receiver-style {
+  background-color: rgb(225, 160, 175);
+}
 
 
 
