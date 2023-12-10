@@ -1,14 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="display-visuel"
+// Connects to data-controller="display-user-card"
 export default class extends Controller {
-  static targets = ['preview'];
+  static targets = ["card"]
   connect() {
+    console.log("hello");
   }
 
   display(event) {
-    console.log(event.currentTarget)
-
     event.preventDefault()
     const url = event.currentTarget.href
     fetch(url, {
@@ -17,8 +16,8 @@ export default class extends Controller {
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
-        this.previewTarget.outerHTML = data
+        console.log(this.cardTarget);
+        this.cardTarget.innerHTML= data
       })
   }
 }
