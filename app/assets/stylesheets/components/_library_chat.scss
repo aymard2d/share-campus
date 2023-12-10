@@ -23,30 +23,18 @@
     padding: 1rem;
   }
 
-  #new_message {
-    border-top: 1px solid $gray-200;
-    padding: 1rem;
-    color: white;
-    grid-template-rows: 3-4;
-    grid-template-columns: 4-6
-  ;
-
-    .form-group {
-      margin-bottom: 0;
-    }
-  }
 
 #welcome-chat {
   font-size: x-large;
   color: white;
-  border-bottom: solid;
   padding: 0px 125px;
 }
 
 #envoyer{
-  width: 100%;
+  width: 90%;
   height: 120%;
   align-items: center;
+  margin-top: 10px;
 
 
   background: rgba(0, 0, 0, 0.16);
@@ -63,18 +51,25 @@
 
 // To style the message itself
 .sender-style, .receiver-style {
-  max-width: 75%;
+  max-width: 70%;
   border-radius: 7px;
   padding: 0px;
   min-height: 50px;
+  word-wrap: break-word; /* Permet le passage à la ligne des mots longs */
+  overflow-wrap: break-word; /* Gère le passage à la ligne pour le contenu non rompu */
+  word-break: break-word;
 }
 
 .sender-style {
   background-color: rgb(31, 126, 138);
+  color: white;
+  padding: 5px;
 }
 
 .receiver-style {
   background-color: rgb(225, 160, 175);
+  color: white;
+  padding: 5px;
 }
 
 
@@ -110,4 +105,3 @@
 // font-size: 10px;
 // line-height: 12px;
 
-// color: #000000;

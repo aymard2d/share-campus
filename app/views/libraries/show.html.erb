@@ -36,7 +36,7 @@
           </div>
         <% end %>
       </div>
-      
+        
         <%= simple_form_for [@library, @message],
           html: { data: { action: "turbo:submit-end->library-subscription#resetForm", library_target: "form" }} do |f| %>
             <%= f.input :content, label: false, placeholder: "Share ton message ici", input_html: { id: "envoyer" } %> 
