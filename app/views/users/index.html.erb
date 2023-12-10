@@ -1,18 +1,20 @@
-<div class="user-main-container">
-  <div class="user-cards">
-    <% @users.each do |user|  %>
-      <% if user.batch = current_user.batch%>
-        <div class="user-card">
-            <%= image_tag "avatar-home.avif", class: "avatar-large", alt: "avatar-large" %>
-          <h5 class="user-title">
-            <%= user.first_name %>
-          </h5>
-          <h5 class="user-title">
-            <%= user.last_name %>
-          </h5>
-          <h6> #<%= user.batch %></h6>
+<div class="user-main-container" >
+  <div data-controller="display-user-card">
+
+    <div class="user-cards" >
+      <% @users.each do |user|  %>
+        <% if user.batch = current_user.batch%>
+            <%= link_to users_path(user.id), data: { action:  "click->display-user-card#display" }, style: 'text-decoration: none' do %>
+              <div class="user-card">
+                <%= image_tag "avatar-home.avif", class: "avatar-large", alt: "avatar-large" %>
+                <h5 class="user-title"><%= user.first_name %> </h5>
+                <h5 class="user-title"><%= user.last_name %></h5>
+                <h6> #<%= user.batch %></h6>
+              </div>
+          <% end %>
+        <% end %>
       <% end %>
-        </div>
-    <% end %>
+    </div>
+  <%= render 'users/user_card', user: @user %>
   </div>
 </div>

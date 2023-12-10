@@ -24,8 +24,7 @@
                 <h3 class="card-subtitle"> <%= course.title %></h3>
                 <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
                 <p class="card-text"><%= course.date %></p>
-          
-                <%= link_to "voir plus", course_path(course.id), data: {display_visuel_target: "eva", action: "click->display-visuel#display" }  %>
+                <%= link_to "voir plus", course_path(course.id), data: {action: "click->display-visuel#display" }  %>
                 <%= button_to '♡', course_likes_path(course), method: :post, class: "button-24 text-decoration-none"%>
             </div>
 
