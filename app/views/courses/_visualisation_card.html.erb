@@ -2,8 +2,10 @@
 <div class="main-card-content">
 
   <div class="card-visualisation" data-display-visuel-target="preview">
+
     <p><%= cl_image_tag course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></p>
     <h4 class="visu-subtitle"> <%= course.title%> </h4>
+
     <p class="summarize"> <%= course.summarize%> </p>
     <h5 class="card-category"> <i class="fas fa-chart-pie"></i> <%= course.category.capitalize %> </h5>
     <p class="visu-text"> <%= course.user.first_name%> <%= course.user.last_name%> </p>
