@@ -3,10 +3,13 @@
 
   <div class="card-visualisation" data-display-visuel-target="preview">
     <p><%= cl_image_tag course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></p>
-    <h4 class=" visu-subtitle"> <%= course.title%> </h4>
+    <h4 class="visu-subtitle"> <%= course.title%> </h4>
     <p class="summarize"> <%= course.summarize%> </p>
-    <h5 class="card-title"> <i class="fas fa-chart-pie"></i> <%= course.category%> </h5>
+    <h5 class="card-category"> <i class="fas fa-chart-pie"></i> <%= course.category.capitalize %> </h5>
     <p class="visu-text"> <%= course.user.first_name%> <%= course.user.last_name%> </p>
+     <%= button_to '♡', course_likes_path(course), method: :post, class: "button-24 text-decoration-none" %>
     <%= link_to "Voir le cours", "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/#{ENV["RAILS_ENV"]}/#{course.document.key}", target: :blank, class: "a-file"%>
 
   </div>
+
+<%# <i class="fa-regular fa-bookmark"></i> %>

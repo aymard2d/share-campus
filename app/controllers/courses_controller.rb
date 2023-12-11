@@ -1,8 +1,8 @@
 class CoursesController < ApplicationController
   def index
     @course = Course.new
-    @last_course = Course.last
     @courses = Course.all.order("created_at DESC")
+    @last_course = @courses[-1]
     return unless params[:query].present?
 
     sql_subquery = "title ILIKE :query OR summarize ILIKE :query"
