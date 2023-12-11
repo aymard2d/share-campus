@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = current_user
+    return unless params[:query].present?
+    sql_subquery = "first_name ILIKE :query OR last_name ILIKE :query OR batch ILIKE :query"
+    @users = @users.where(sql_subquery, query: "%#{params[:query]}%")
+    respond_to do |format|
+      format.html 
+      format.text { render partial: "users/user_card", locals: {user: @user}, formats: [:html] }
+    end
   end
 
   def show

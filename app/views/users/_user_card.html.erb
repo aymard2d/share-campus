@@ -1,6 +1,12 @@
-<div class="main-card" >
-  <div data-display-user-card-target="card">
 
-  <h1> <%= user.first_name %></h1>
+  <div class="card-user-content">
+    <%= cl_image_tag user.photo.key, width: 250,crop: :fill,  class: "avatar-large-preview", alt: "avatar-large" %>
+    <h5 class="user-card-title"> <%= user.first_name %></h5>
+    <h5 class="user-card-title"> <%= user.last_name %></h5>
+    <h6 class="link-card"> #<%= user.batch %></h6>
+    <p> <%= user.description %></p>
   </div>
-</div>
+  <div class="card-badges">
+    <h5 class="user-card-title"> Badges </h5>
+    
+  </div>
