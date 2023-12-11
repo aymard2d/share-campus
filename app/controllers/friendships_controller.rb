@@ -4,13 +4,11 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    def create
-      @friendship = Friendship.new(friendship_params)
-      if @friendship.save
-        redirect_to root_path, notice: "Votre demande d'ami(e) a bien été envoyée  !"
-      else
-        render :new
-      end
+    @friendship = Friendship.new(friendship_params)
+    if @friendship.save
+      redirect_to root_path, notice: "Votre demande d'ami(e) a bien été envoyée  !"
+    else
+      render :new
     end
   end
 

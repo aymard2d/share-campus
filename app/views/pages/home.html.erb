@@ -20,17 +20,17 @@
       <br>
       <br>N'oubliez pas d'aller consulter la liste complète des activités et des ajouter à votre agenda !
     </p>
+    <div class="btn-event bouton-event">
+      <%= link_to "Rendez-vous au BDE", events_path, class: "button-bde text-decoration-none" %>
+    </div>
   </div>
   <div class="mb-5 keywords">
     <h2 class="decouvrir">DÉCOUVRIR</h2>
     <h2 class="apprendre">APPRENDRE</h2>
     <h2 class="partager">PARTAGER</h2>
   </div>
-  <div class="btn-resources bouton-ressources">
+  <div class="btn-resources bouton-ressources" style="height: 0px">
     <%= link_to "Rendez-vous à l'espace ressources", courses_path, class: "button-89 text-decoration-none" %>
-  </div>
-  <div class="btn-event bouton-event">
-    <%= link_to "Rendez-vous au BDE", events_path, class: "button-89 text-decoration-none" %>
   </div>
   <div class="btn-bibli bouton-bibli">
   <%= link_to "Rendez-vous à la bibliothèque", library_path(@library), class: "button-89 text-decoration-none" %>

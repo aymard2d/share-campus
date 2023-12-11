@@ -152,7 +152,7 @@ h1 {
   --b: 3px;   /* border thickness */
   --s: .45em; /* size of the corner */
   --color: #373B44;
-  
+
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));
   --_p: var(--s);
   background:
@@ -180,4 +180,49 @@ h1 {
 .button-89:active {
   background: var(--color);
   color: #fff;
+}
+
+// button BDE
+
+.button-bde {
+  font-family: 'Bowlby One SC';
+  color:#148A99;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 20px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 30%;
+  margin-bottom: 55%;
+}
+
+.button-bde:hover,
+.button-bde:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-bde:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.btn-event {
+  margin-top: 3rem;
+  margin-left: 27rem;
 }
