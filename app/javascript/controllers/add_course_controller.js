@@ -9,7 +9,7 @@ export default class extends Controller {
   }
 
   displayForm() {
-    this.cardTarget.classList.remove("d-none")
+    this.formTarget.classList.remove("d-none")
   }
 
   add(event) {

@@ -18,32 +18,32 @@
 
           <% @events.each do |event| %>
             <%= link_to "events/#{event.id}", data: { action:  "click->display-event-card#display" }, style: 'text-decoration: none' do %>
-        <div class="card-header">
-          Share Event & <%= event.user.first_name %> <%= event.user.last_name %> présentent
-        </div>
-      <div class="card text-center" >
-        <div class="card-body">
-          <h5 class="card-title"><%= event.title %></h5>
-          <p class="card-text"><%= event.user.first_name %> <%= event.user.last_name %></p>
-          <p class="card-text"><%= event.starting_date %></p>
-        </div>
-        <div class="card-footer text-muted">
-          Ajoutez cet évènement à votre agenda :
-        </div>
-            <% end %>
-          </div>
+            <div class="card-header">
+              Share Event & <%= event.user.first_name %> <%= event.user.last_name %> présentent
+            </div>
+            <div class="card text-center" >
+              <div class="card-body">
+                <h5 class="card-title"><%= event.title %></h5>
+                <p class="card-text"><%= event.user.first_name %> <%= event.user.last_name %></p>
+                <p class="card-text"><%= event.starting_date %></p>
+              </div>
+              <div class="card-footer text-muted">
+                Ajoutez cet évènement à votre agenda :
+              </div>
+                <% end %>
+            </div>
           <% end %>
       </div>
       <%= render "events/visualisation_event", event: @last_event %>
-      </div>
+    </div>
 
-      <div class="main-container-file">
-        <div class="file-download">
-          <img src="<%= image_path 'file.png'%>" class="icon-file" >
-          <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
-        </div>
-        <%= render 'events/add_event_form'%>
+    <div class="main-container-file">
+      <div class="file-download">
+        <img src="<%= image_path 'file.png'%>" class="icon-file" >
+        <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
       </div>
+      <%= render 'events/add_event_form'%>
     </div>
   </div>
 </div>
+
