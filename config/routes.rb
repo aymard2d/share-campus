@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'user_events/create'
+  get 'events/new'
+  get 'events/index'
+  get 'events/create'
+  get 'events/update'
+  get 'events/delete'
   get 'friendships/new'
   get 'friendships/create'
   devise_for :users
@@ -18,5 +24,10 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :create, :show]
   resources :libraries, only: :show do
     resources :messages, only: :create
+  end
+
+  #routes des évènements
+  resources :events, only: :index do
+    resources :user_events, only: :create
   end
 end

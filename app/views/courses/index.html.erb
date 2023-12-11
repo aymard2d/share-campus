@@ -18,20 +18,19 @@
       <div class="all-cards" data-add-course-target="list">
         <% if @courses.any? %>
           <% @courses.each do |course| %>
+            <%= link_to "courses/#{course.id}", data: { action:  "click->display-visuel#display" }, style: 'text-decoration: none' do %>
             <div class="list-card"  >
               <div class="card-img" style="background-image: url(<%= image_path 'img-card2.jpeg' %>)">
                 <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
                 <h3 class="card-subtitle"> <%= course.title %></h3>
                 <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
                 <p class="card-text"><%= course.date %></p>
-                <%= link_to "voir plus", course_path(course.id), data: {action: "click->display-visuel#display" }  %>
+
                 <%= button_to '♡', course_likes_path(course), method: :post, class: "button-24 text-decoration-none"%>
             </div>
-
+            <% end %>
           </div>
           <% end %>
-        <% else %>
-          <em> Désolé, aucun sujet de cours n'a été trouvé.</em>
         <% end %>
       </div>
     <%= render "courses/visualisation_card", course: @last_course %>
