@@ -1,24 +1,23 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="display-visuel"
+// Connects to data-controller="display-user-card"
 export default class extends Controller {
-  static targets = ['preview'];
+  static targets = ["preview"]
   connect() {
+    console.log("hello");
   }
 
   display(event) {
-    console.log(course.currentTarget)
-
     event.preventDefault()
-    const url = course.currentTarget.href
+    const url = event.currentTarget.href
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/plain" }
     })
       .then(response => response.text())
       .then((data) => {
-        console.log(data);
-        this.previewTarget.outerHTML = data
+        console.log(this.cardTarget);
+        this.previewTarget.outerHTML= data
       })
   }
 }

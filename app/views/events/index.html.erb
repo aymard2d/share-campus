@@ -13,11 +13,11 @@
   </div>
 
   <div>
-    <div id="events" data-controller="add-event display-visuel">
+    <div id="events" data-controller="add-event display-event-card">
       <div class="all-cards" data-add-event-target="list">
       
           <% @events.each do |event| %>
-            <%= link_to "events/#{event.id}", data: { action:  "click->display-visuel#display" }, style: 'text-decoration: none' do %>
+            <%= link_to "events/#{event.id}", data: { action:  "click->display-event-card#display" }, style: 'text-decoration: none' do %>
         <div class="card-header">
           Share Event & <%= event.user.first_name %> <%= event.user.last_name %> présentent
         </div>
@@ -34,9 +34,9 @@
           </div>
           <% end %>
       </div>
+      <%= render "events/visualisation_event", event: @last_event %>
       </div>
 
-      <%= render "events/visualisation_event", event: @last_event %>
       <div class="main-container-file">
         <div class="file-download">
           <img src="<%= image_path 'file.png'%>" class="icon-file" >
