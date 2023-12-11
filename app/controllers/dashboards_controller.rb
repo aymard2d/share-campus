@@ -4,6 +4,9 @@ class DashboardsController < ApplicationController
     @courses = Course.all
     @user_courses = current_user.courses
     @likes = Like.all
+    @friendship_requests = current_user.friendships.where(status: 'pending')
+    @friendship = Friendship.all
+
   end
 
   def show

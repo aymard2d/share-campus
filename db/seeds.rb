@@ -29,7 +29,7 @@ library_1 = Library.create(name: "Chat de la bibliothèque")
 # SEED DES UTILISATEURS
 
 user99 = User.create!(first_name: "Share", last_name: "admin", email: "share@share.fr", batch: 0000, password: 123444)
-user0 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymardn@share.fr", batch: 1438, password: 123444)
+user0 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", batch: 1438, password: 123444)
 user1 = User.create!(first_name: "Juju", last_name: "Magic", email: "julien@share.fr", batch: 1438, password: 123444)
 user2 = User.create!(first_name: "Sarah", last_name: "LaReusta", email: "sarah@share.fr", batch: 1438, password: 123444)
 user3 = User.create!(first_name: "Yac", last_name: "Starzou", email: "yacine@share.fr", batch: 1438, password: 123444)

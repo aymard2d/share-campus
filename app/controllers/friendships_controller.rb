@@ -1,20 +1,45 @@
 class FriendshipsController < ApplicationController
-  def new
-    @friendship = Friendship.new
+  before_action :authenticate_user!
+
+  def index
+    @friends = Friendship.all
+    @friends = current_user.friends
+    @friend_requests = current_user.friendships.where(status: 'pending')
   end
 
   def create
-    @friendship = Friendship.new(friendship_params)
-    if @friendship.save
-      redirect_to root_path, notice: "Votre demande d'ami(e) a bien été envoyée  !"
+    friend = User.find(params[:user_id])
+    # friendship = current_user.friendships(friend: friend, status: 'pending')
+    user = current_user
+    friendship = Friendship.new(friend: friend, status: 'pending', user: user)
+    if friendship.save
+      redirect_to users_path, notice: "Demande d'amitié envoyée."
     else
-      render :new
+      redirect_to friendships_path, alert: "Erreur lors de l'envoi de la demande."
     end
+  end
+
+  def destroy
+    friendship = current_user.friendships.find(params[:id])
+    friendship.destroy
+    redirect_to users_path, notice: 'Ami supprimé.'
+  end
+
+  def accept
+    friendship = Friendship.find(params[:id])
+    friendship.update(status: 'accepted')
+    redirect_to dashboard_path(@dashboard), notice: "Demande d'ami acceptée"
+  end
+
+  def decline
+    friendship = Friendship.find(params[:id])
+    friendship.destroy
+    redirect_to dashboard_path(@dashboard), notice: "Demande d'ami refusée"
   end
 
   private
 
-  def friendship_params
-    params.require(:friendship).permit(:user_id, :friend_id, :status)
+  def params_friendship
+    params.require(:friendship).permit(:user_id)
   end
 end

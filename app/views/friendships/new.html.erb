@@ -1,2 +1,20 @@
-<h1>Friendships#new</h1>
-<p>Find me in app/views/friendships/new.html.erb</p>
+
+<h1>Liste d'amis</h1>
+
+<h2>Mes Amis</h2>
+<ul>
+  <% @friendship.each do |friend| %>
+    <li><%= friend.name %></li>
+  <% end %>
+</ul>
+
+<h2>Demandes en attente</h2>
+<ul>
+  <% @friend_requests.each do |request| %>
+    <li>
+      <%= request.friend.name %>
+      <%= link_to 'Accepter', friendship_path(request), method: :patch %>
+      <%= link_to 'Refuser', friendship_path(request), method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+    </li>
+  <% end %>
+</ul>

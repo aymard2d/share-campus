@@ -9,6 +9,7 @@
                 <%= image_tag "avatar-home.avif", class: "avatar-large", alt: "avatar-large" %>
                 <h5 class="user-title"><%= user.first_name %> </h5>
                 <h5 class="user-title"><%= user.last_name %></h5>
+                <%= link_to "Ajouter en ami", user_friendships_path(user.id), data: {turbo_method: :post} %>
                 <h6> #<%= user.batch %></h6>
               </div>
           <% end %>
