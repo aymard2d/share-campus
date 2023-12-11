@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
     return unless params[:query].present?
 
-    sql_subquery = "title ILIKE :query OR description ILIKE :query OR starting_date :query"
+    sql_subquery = "title ILIKE :query OR description ILIKE :query OR starting_date ILIKE :query"
     @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
   end
 
