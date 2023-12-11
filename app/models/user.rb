@@ -10,9 +10,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_courses, through: :likes, source: :courses # Retourne les instances de cours où les cours ont été likés
   has_many :messages, dependent: :destroy
-  has_many :friendships, dependent: :destroy
-  has_many :friends, through: :friendship, source: :friend
   has_many :events, dependent: :destroy
   has_many :user_events, dependent: :destroy
   has_many :added_events, through: :user_events, source: :events
+  has_many :friendships, foreign_key: :friend_id
 end

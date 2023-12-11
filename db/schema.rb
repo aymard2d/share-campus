@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_105739) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_153140) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,22 +69,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_105739) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "friends", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "friend_id", null: false
-    t.string "nickname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_friends_on_friend_id"
-    t.index ["user_id"], name: "index_friends_on_user_id"
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "friend_id", null: false
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "friend_id"
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
@@ -143,10 +134,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_105739) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
   add_foreign_key "events", "users"
-  add_foreign_key "friends", "friends"
-  add_foreign_key "friends", "users"
-  add_foreign_key "friendships", "friends"
   add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "likes", "courses"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "libraries"

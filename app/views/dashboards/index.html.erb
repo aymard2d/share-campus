@@ -28,8 +28,21 @@
         </div>
       </ul>
     </div>
-  </la>
   <% end %>
+  <% @friendship_requests.each do |request| %>
+    <p>
+      <%= link_to 'Accepter', accept_friend_friendship_path(request), method: :patch %>
+      <%= link_to 'Décliner', decline_friend_friendship_path(request), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
+      <%= "#{request.user.first_name} #{request.user.last_name} vous a envoyé une demande d'ami" %>
+    </p>
+  <% end %>
+    <h1>Vos amis :</h1>
+  <% @friendship.each do |friendship| %>
+  <p>
+    <%= "#{friendship.user.first_name}" %>
+  </p>
+  <% end %>
+
   </div>
   <div class="dashboard-infos">
       <%= image_tag("students.jpg", class: "students-img") %>

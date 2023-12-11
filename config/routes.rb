@@ -30,4 +30,20 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show] do
     resources :user_events, only: :create
   end
+
+  resources :users do
+    resources :friendships, only: [:create, :destroy]
+  end
+
+  namespace :friend do
+    get 'friendships/accept'
+    get 'friendships/decline'
+    resources :friendships, only: [] do
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
+    resource :dashboards, only: %i[show]
+  end
 end

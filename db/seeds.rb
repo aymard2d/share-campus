@@ -28,8 +28,11 @@ library_1 = Library.create(name: "Chat de la bibliothèque")
 
 # SEED DES UTILISATEURS
 
+
+user0.document.attach(io: File.open('app/assets/images/aymard.jpg'),filename: 'aymard.jpg' )
+
 #user99 = User.create!(first_name: "Share", last_name: "admin", email: "share@share.fr", batch: 0000, password: 123444)
-user0 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymardn@share.fr", batch: 1438, password: 123444, description: "Student @LeWagon
+user0 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", batch: 1438, password: 123444, description: "Student @LeWagon
 Name Aymard de Dieuleveult, living in Boulogne-Billancourt. Age : 38 ans.
 Was previously working as a co-founder of the first syndicate of 'Micro-entrepreneurs' UPSME to help people to make their own entreprise.
 Starting my first workshop to become a web developer in Ruby. Can't wait to learn some crazy tricks.")
