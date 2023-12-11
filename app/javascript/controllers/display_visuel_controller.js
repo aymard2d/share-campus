@@ -7,10 +7,10 @@ export default class extends Controller {
   }
 
   display(event) {
-    console.log(course.currentTarget)
+    console.log(event.currentTarget)
 
     event.preventDefault()
-    const url = course.currentTarget.href
+    const url = event.currentTarget.href
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/plain" }
