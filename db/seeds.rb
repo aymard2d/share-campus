@@ -29,7 +29,7 @@ library_1 = Library.create(name: "Chat de la bibliothèque")
 # SEED DES UTILISATEURS
 
 
-user0.document.attach(io: File.open('app/assets/images/aymard.jpg'),filename: 'aymard.jpg' )
+#user0.document.attach(io: File.open('app/assets/images/aymard.jpg'),filename: 'aymard.jpg' )
 
 #user99 = User.create!(first_name: "Share", last_name: "admin", email: "share@share.fr", batch: 0000, password: 123444)
 user0 = User.create!(first_name: "Foxy", last_name: "Classy", email: "aymard@share.fr", batch: 1438, password: 123444, description: "Student @LeWagon

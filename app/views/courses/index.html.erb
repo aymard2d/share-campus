@@ -1,39 +1,42 @@
 <div class="courses-container">
-    <div class="row justify-content-center mb-4 border rounded-pill p-1">
-      <%= form_with url: courses_path, method: :get, class: "d-flex search-bar" do %>
+  <div class="row justify-content-center mb-4 border rounded-pill p-1">
+    <%= form_with url: courses_path, method: :get, class: "d-flex search-bar" do %>
 
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control bg-none border-0 search",
-          placeholder: "Rechercher un cours"
-        %>
-        <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
-          <i class="fa fa-search"></i>
-        <% end%>
-      <% end %>
-    </div>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control bg-none border-0 search",
+        placeholder: "Rechercher un cours"
+      %>
+      <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
+        <i class="fa fa-search"></i>
+      <% end%>
+    <% end %>
+  </div>
 
   <div>
     <div id="courses" data-controller="add-course display-visuel">
       <div class="all-cards" data-add-course-target="list">
+
         <% @courses.each do |course| %>
           <%= link_to "courses/#{course.id}", data: { action:  "click->display-visuel#display" }, style: 'text-decoration: none' do %>
-            <div class="list-card"  >
+            <div class="list-card">
               <div class="card-img" style="background-image: url(<%= image_path 'book-3.png' %>)">
                 <h5 class="card-category"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
                 <h3 class="card-title"> <%= course.title %></h3>
-               </div>
+              </div>
             </div>
           <% end %>
         <% end %>
       </div>
       <%= render "courses/visualisation_card", course: @last_course %>
+
       <div class="main-container-file">
         <div class="file-download">
           <img src="<%= image_path 'file.png'%>" class="icon-file" >
-          <button class="button-62 btn-file" data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
+          <button class="button-62 btn-file"
+          data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
         </div>
-        <%= render 'courses/add_course_form'%>
+        <%= render 'courses/add_course_form' %>
       </div>
     </div>
   </div>
