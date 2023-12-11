@@ -1,0 +1,14 @@
+<div>
+  <%= simple_form_for (@event), html: {class: @event.errors.any? ? "" : "d-none form-file container ", data: { add_event_target: "form", action: "submit->add-event#add turbo:submit-end->add-event#resetForm" }} do |f| %>
+    <%= f.input :title, label: "Titre" %>
+    <%= f.input :description, as: :text, label: "Description" %>
+    <%= f.input :category, collection: ["Conférence", "Soirée", "Témoignage", "CAMPUS ALERT", "Speed dating", "Tournoi"], label: "Sélectionnez une catégorie" %>
+    <%= f.input_field :starting_date, as: :hidden, value: Date.today %>
+    <%# rajouter html 5 pour choisir un créneau horaire %>
+    <%#= f.input_field :starting_time, :html5, label: "Choisissez un créneau horaire" %>
+    <%= f.input_field :user_id, as: :hidden, value: params[:id] %>
+    <%= f.input :document, as: :file, label: "Sélectionnez un document" %>
+
+    <%= f.submit "Share!", class: "button-62 form-event" %>
+  <% end %>
+</div>
