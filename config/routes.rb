@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   #routes des évènements
-  resources :events, only: :index do
+  resources :events, only: [:index, :show] do
     resources :user_events, only: :create
   end
 

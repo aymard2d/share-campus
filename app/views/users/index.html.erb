@@ -1,6 +1,8 @@
-<div class="user-main-container" >
-  <div data-controller="display-user-card">
 
+
+<div class="user-main-container" data-controller="display-user-card" >
+  <div class="main-content-user">
+    <h3 id="batch"> Mon batch</h3>
     <div class="user-cards" >
       <% @users.each do |user|  %>
         <% if user.batch = current_user.batch%>
@@ -12,10 +14,34 @@
                 <%= link_to "Ajouter en ami", user_friendships_path(user.id), data: {turbo_method: :post} %>
                 <h6> #<%= user.batch %></h6>
               </div>
+              <%#= cl_image_tag user.photo.key, width: 250,crop: :fill,  class: "avatar-large", alt: "avatar-large" %>
+              <h5 class="user-title"><%= user.first_name %> </h5>
           <% end %>
         <% end %>
       <% end %>
     </div>
-  <%= render 'users/user_card', user: @user %>
+    <div data-action="click->display-user-card#remove" class="link-users">
+      Voir tous les sharemates du campus
+    </div>
+    <div class="d-none" data-display-user-card-target="list">
+      <h3 id="campus"> Campus </h3>
+    <div class="row justify-content-center mb-4 mx-5 border rounded-pill p-1">
+      <%= form_with url: users_path, method: :get, class: "d-flex search-bar",
+       data: { action:  "click->display-user-card#filterUser" } do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control bg-none border-0 search",
+          placeholder: "Rechercher un sharemates"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
+          <i class="fa fa-search"></i>
+        <% end%>
+      <% end %>
+    </div>
+      <%= render "user_list", users: @users%>
+    </div>
+  </div>
+  <div class="main-card-user" data-display-user-card-target="card">
+    <%#= render 'users/user_card', user: @user %>
   </div>
 </div>

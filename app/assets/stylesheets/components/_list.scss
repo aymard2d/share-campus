@@ -1,13 +1,31 @@
 .courses-container {
-  margin: 30px 500px 15px 150px;
+  margin: 30px auto;
 }
+
+.all-cards:hover .list-card {
+  filter: blur(3px);
+  opacity: .5;
+  transform: scale(.98);
+  box-shadow: none;
+}
+
+.all-cards:hover .list-card:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
+  background: rgb(64, 139, 150);
+  color: rgb(26, 120, 132);
+}
+
 .all-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   justify-content: center;
-  margin-right: 10px;
+  margin-right: 13px;
 }
+
 #courses {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -18,7 +36,7 @@
   width: 220px;
   height: 220px;
   border-radius: 4px;
-
+  transition: .3s all;
 }
 
 .card-img {
@@ -28,18 +46,19 @@
   background-position: center;
   border-radius: 4px;
   display: flex;
+  padding: 1px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 2px #FFE3E6 ;
+  box-shadow: 2px 2px 2px 3px #FFE3E6 ;
 }
 
 .transparency {
   opacity: 0.5;
 }
 
-.card-title {
-  margin-bottom: 30px;
+.card-category {
+  margin-bottom: 18px;
   color: #fc8c1d;
   font-size: 18px;
   text-shadow: 0.2px 0.2px 0.2px rgb(188, 187, 187);
@@ -48,19 +67,24 @@
   font-size: 18px;
 }
 
-.card-subtitle {
-  color: rgb(77, 152, 162);
+.card-title {
+  color: rgb(26, 121, 133);
   font-size: 20px;
   text-align: center;
   margin: 5px;
   text-shadow: 0.3px 0.3px 0.3px rgb(97, 97, 97);
+  margin-bottom: 7rem;
 }
 
 .card-text {
   color: white;
-  margin-bottom: 5px;
+  margin: 5px;
   font-size: 15px;
   text-shadow: 0.2px 0.2px 0.2px rgb(97, 97, 97);
+}
+
+.visu-subtitle {
+  color: rgb(26, 121, 133);
 }
 
 .a-file {

@@ -13,7 +13,7 @@
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
             <%= link_to users_path, class: "dropdown-item", style: 'text-decoration: none' do  %>
-              Ma Batch <%#= current_user.batch %>
+              Mon Batch <%#= current_user.batch %>
             <% end %>
           <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "log-out dropdown-item" %>
         </div>

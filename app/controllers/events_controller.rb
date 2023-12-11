@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
   def index
     @event = Event.new
-    @lasts_event = Event.last(3)
+    @last_event = Event.last
     @events = Event.all.order("created_at DESC")
     return unless params[:query].present?
 
-    sql_subquery = "title ILIKE :query OR description ILIKE :query OR starting_date :query"
+    sql_subquery = "title ILIKE :query OR description ILIKE :query OR starting_date ILIKE :query"
     @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
   end
 
@@ -22,10 +22,12 @@ class EventsController < ApplicationController
     end
   end
 
-  def update
-  end
-
-  def delete
+  def show
+    @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to events_path}
+      format.text { render partial: "events/visualisation_event", locals: {event: @event}, formats: [:html] }
+    end 
   end
 
   private

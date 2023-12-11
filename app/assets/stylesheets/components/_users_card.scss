@@ -1,7 +1,16 @@
 .user-main-container {
-  margin: 30px auto;
+  margin: 30px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main-content-user {
+  justify-self: center;
+  margin-left: 40px;
 }
 
+.fa-search {
+  color: #148999c7
+}
 .avatar-large {
   width: 60px;
   border-radius: 50%;
@@ -20,10 +29,10 @@
 }
 
 .user-card {
-  align-self: center;
   border-radius: 15px;
   align-items: center;
   text-align: center;
+  justify-content: center;
   margin: 20px;
   padding: 10px;
   width: 180px;
@@ -35,4 +44,87 @@
 
 .user-title {
   color: #148999c7;
+  font-size: 18px;
+}
+
+.link-card {
+  color: grey;
+}
+
+.link-users {
+  text-decoration: none;
+  font-family: raleway;
+  justify-content: center;
+  display: flex;
+  margin: 15px;
+  color: #BA2749;
+  cursor: pointer;
+
+  &:hover {
+    color: #ba274984;
+  }
+}
+.main-card-user {
+  justify-self: end;
+  margin-right: 40px;
+  margin-top: 80px;
+  position: sticky;
+  top: 110px;
+}
+
+.card-user-content {
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding: 10px;
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px 2px #FFE3E6;
+  overflow-wrap: anywhere;
+  font-family: raleway;
+}
+
+.user-card-title {
+  color: #148999c7
+}
+
+.avatar-large-preview {
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid #FFE3E6;
+  margin-bottom: 8px
+}
+
+.card-badges {
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 40px;
+  padding: 15px;
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 1px 2px #FFE3E6;
+  overflow-wrap: anywhere;
+  font-family: raleway;
+}
+
+#batch {
+  color: #BA2749;
+  margin: 15px;
+  text-align: center;
+}
+
+#campus {
+  color: #BA2749;
+  margin: 50px 15px 15px 15px;
+  text-align: center;
 }
