@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
     if friendship.save
       redirect_to users_path, notice: "Demande d'amitié envoyée."
     else
-      redirect_to friendships_path, alert: "Erreur lors de l'envoi de la demande."
+      redirect_to users_path, alert: "Erreur lors de l'envoi de la demande."
     end
   end
 
