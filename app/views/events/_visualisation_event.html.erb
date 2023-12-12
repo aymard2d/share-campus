@@ -1,10 +1,29 @@
 <div class="main-card-content">
   <div class="card-visualisation" data-display-event-card-target="preview">
     <p><%#= cl_image_tag event.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></p>
-    <h4 class=" visu-subtitle"> <%= event.title%> </h4>
+    <h4 class="visu-subtitle"> <%= event.title%> </h4>
     <p class="summarize"> <%= event.description%> </p>
-    <h5 class="card-category"> <i class="fas fa-chart-pie"></i> <%= event.category%> </h5>
+    <h5 class="card-category">  
+    <% if event.category == "Soirée" %>
+      <h5 class="card-category"><i class="fa-regular fa-heart"></h5>
+    <% elsif event.category == "Conférence" %>
+      <h5 class="card-category"><i class="fa-regular fa-heart"></h5>
+    <% elsif event.category == "Speed dating" %>
+      <h5 class="card-category"><i class="fa-regular fa-heart"></i></h5>
+    <% elsif event.category == "Coaching" %>
+      <h5 class="card-category"><i class="fa-regular fa-heart"></i></h5>
+    <% elsif event.category == "CAMPUS ALERT" %>
+      <h5 class="card-category"><i class="fa-regular fa-heart"></i></h5>
+    <% elsif event.category == "Gaming" %>
+      <h5 class="card-category"><i class="fa-solid fa-headset"></i></h5>
+    <% elsif event.category == "Témoignage" %>
+      <h5 class="card-category"><i class="fa-solid fa-headset"></i></h5>
+    <% elsif event.category == "Tournoi" %>
+      <h5 class="card-category"><i class="fa-solid fa-headset"></i></h5>
+    <% end %>
+    <%= event.category%> </h5>
     <p class="visu-text"> <%= event.user.first_name%> <%= event.user.last_name%> </p>
+    
     <%#= button_to '♡', event_likes_path(course), method: :post, class: "button-24 text-decoration-none" %>
   </div>
 </div>
