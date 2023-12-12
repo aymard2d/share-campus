@@ -42,9 +42,14 @@
   <div class="dashboard-infos">
   <h3>Tes sharemates :</h3>
     <div class="friendlist">
-      <% @friendship.each do |friendship| %>
+      <% @jsp.each do |friendship| %>
       <p>
+        <% if friendship.user == current_user  %>
+        <%= "#{friendship.friend.first_name} #{friendship.friend.last_name}" %>
+        <% else %>
         <%= "#{friendship.user.first_name} #{friendship.user.last_name}" %>
+
+        <% end %>
       </p>
       <% end %>
     </div>
