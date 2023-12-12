@@ -7,8 +7,8 @@ class DashboardsController < ApplicationController
     @friendship_requests = current_user.friendships.where(status: 'pending')
     @friendship_accepted = Friendship.where(status: 'accepted')
     @friendship = @friendship_accepted.where(friend: current_user)
-    @friendship_qqch = @friendship_accepted.where(user: current_user) # friend : current_user
-    @jsp = @friendship_qqch + @friendship
+    @friendship_decline = @friendship_accepted.where(user: current_user) # friend : current_user
+    @jsp = @friendship_decline + @friendship
   end
 
   def show

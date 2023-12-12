@@ -5,8 +5,14 @@
     <h5 class="user-card-title"> <%= user.last_name %></h5>
     <h6 class="link-card"> #<%= user.batch %></h6>
     <p> <%= user.description %></p>
-    <%= button_to user_friendships_path(user), method: :post, class: "btn-friend" do %>
-      Envoyer une demande d'ami
+      <%= @jsp %>
+      <%= @jsp.find(friend: user, user: current_user) %>
+        <% if @jsp.find(friend: user) %>
+      <p>Tu es déjà ami avec cette personne</p>
+        <% else %>
+      <%= button_to user_friendships_path(user), method: :post, class: "btn-friend" do %>
+        Envoyer une demande d'ami
+      <% end %>
     <% end %>
     </div>
   <div class="card-badges">
