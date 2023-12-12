@@ -13,7 +13,7 @@ h2 {
     }
 
     &.ensemble {
-      color: #FFBEBE;
+      color: #BA2749;
     }
 }
 
@@ -62,10 +62,10 @@ h3, h4, h5 {
 
 .activities {
   grid-column: 1/3;
-  grid-row: 2/3;
+  grid-row: 3/3;
   padding-left: 20px;
   padding-top: 50px;
-  margin-top: 225px;
+  margin-top: -330px;
 }
 
 .bibli {
@@ -151,9 +151,9 @@ h1 {
 // }
 
 .dimensions-campus {
-  margin-top: -310px;
+  margin-top: -193px;
   width: 577px;
-  margin-right: -160px;
+  margin-right: -80px;
   height: 355px;
   flex-shrink: 0;
 }

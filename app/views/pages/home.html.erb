@@ -10,7 +10,7 @@
     <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2", class= "dimensions-teacher">
   </div>
   <div class="baseline">
-    <h1 id="welcome" style="color: #F9CE06">Bienvenue sur le campus, <%= current_user.first_name %></h1>
+    <h1 id="welcome" style="color: #3579C3">Bienvenue sur le campus, <%= current_user.first_name %></h1>
     <p class="welcome-description ml3">Share est le premier campus virtuel créé pour les étudiants par des étudiants.
       <br>Grâce à Share, vous pourrez collaborer, échanger, tisser du lien et ainsi améliorer votre expérience étudiante.
       <br>
@@ -28,8 +28,7 @@
       <%= link_to "Rendez-vous au BDE", events_path, class: "button-bde text-decoration-none" %>
     </div>
   </div>
-  <div class="mb-5 keywords">
-  </div>
+
   <div class="bibli">
     <div class="btn-bibli bouton-bibli" style="height: 0px">
       <%= link_to "Rendez-vous à la bibliothèque", library_path(@library), class: "button-89 text-decoration-none" %>
@@ -40,4 +39,7 @@
     </div>
   </div>
 </div>
+<%# <div class="mb-5 keywords"><h2>SEUL NOUS ALLONS VITE</h2>
+    <h2>ENSEMBLE NOUS ALLONS PLUS LOIN</h2> %>
+  </div>
 </div>
