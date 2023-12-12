@@ -3,7 +3,8 @@
   background: white;
   position: sticky;
   top: 0;
-  box-shadow: 11px 9px 9px rgb(169, 179, 184)
+  box-shadow: 11px 9px 9px rgb(169, 179, 184);
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
