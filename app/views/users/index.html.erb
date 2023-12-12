@@ -1,5 +1,3 @@
-
-
 <div class="user-main-container" data-controller="display-user-card" >
   <div class="main-content-user">
     <h3 id="batch"> Mon batch</h3>
@@ -22,12 +20,13 @@
     <div class="d-none" data-display-user-card-target="list">
       <h3 id="campus"> Campus </h3>
     <div class="row justify-content-center mb-4 mx-5 border rounded-pill p-1">
-      <%= form_with url: users_path, method: :get, class: "d-flex search-bar",
-        data: { action:  "click->display-user-card#filterUser" } do %>
+      <%= form_with url: users_path, method: :get, class: "d-flex search-bar", data: { display_user_card_target: "form"} do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control bg-none border-0 search",
-          placeholder: "Rechercher un sharemates"
+          placeholder: "Rechercher un sharemates",
+          data: { action:  "keyup->display-user-card#filterUser",
+            display_user_card_target: "input" }
         %>
         <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
           <i class="fa fa-search"></i>
@@ -37,7 +36,9 @@
       <%= render "user_list", users: @users%>
     </div>
   </div>
-  <div class="main-card-user" data-display-user-card-target="card">
-    <%#= render 'users/user_card', user: @user %>
+  <div>
+    <div class="main-card-user" data-display-user-card-target="card">
+      <%#= render 'users/user_card', user: @user %>
+    </div>
   </div>
 </div>
