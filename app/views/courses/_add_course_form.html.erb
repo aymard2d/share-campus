@@ -2,7 +2,7 @@
   <%= simple_form_for (@course), html: {class: @course.errors.any? ? "" : "d-none form-file container ", data: { add_course_target: "form", action: "submit->add-course#add turbo:submit-end->add-course#resetForm" }} do |f| %>
     <%= f.input :title, label: "Titre" %>
     <%= f.input :summarize, as: :text, label: "Résumé" %>
-    <%= f.input :category, collection: ["Ruby", "Javascript", "HTML", "CSS3", "Rails", "Bootstrap"], label: "Sélectionnez une catégorie" %>
+    <%= f.input :category, collection: ["Ruby", "Javascript", "HTML5", "CSS3", "Ruby on Rails", "CSS Bootstrap", "Data-analytics" ,"Data-science"], label: "Sélectionnez une catégorie" %>
     <%= f.input_field :date, as: :hidden, value: Date.today %>
     <%= f.input_field :user_id, as: :hidden, value: params[:id] %>
     <%= f.input :document, as: :file, label: "Sélectionnez un document" %>

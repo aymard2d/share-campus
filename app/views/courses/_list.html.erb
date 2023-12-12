@@ -1,9 +1,9 @@
-<div class="list-card" >
-  <div class="card-img" style="background-image: url(<%= image_path 'img-card2.jpeg' %>)">
-    <h5 class="card-title"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
-    <h3 class="card-subtitle"> <%= course.title %></h3>
-    <p class="card-text"><%= course.user.first_name %> <%= course.user.last_name %></p>
-    <p class="card-text"><%= course.date %></p>
-    <a href="#" class="a-file" data-action="click->display-visuel#display" > Voir plus </a>
+<%= link_to "courses/#{course.id}", data: { action:  "click->display-visuel#display" }, style: 'text-decoration: none' do %>
+  <div class="list-card">
+    <div class="card-img" style="background-image: url(<%= image_path 'book-3.png' %>)">
+      <h5 class="card-category"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
+      <h3 class="card-title"> <%= course.title %></h3>
+    </div>
   </div>
-</div>
+<% end %>
+
