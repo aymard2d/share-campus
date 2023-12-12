@@ -35,15 +35,12 @@ Rails.application.routes.draw do
     resources :friendships, only: [:create, :destroy]
   end
 
-  namespace :friend do
-    get 'friendships/accept'
-    get 'friendships/decline'
+
     resources :friendships, only: [] do
       member do
         patch :accept
         patch :decline
       end
+      resource :dashboards, only: %i[show]
     end
-    resource :dashboards, only: %i[show]
-  end
 end

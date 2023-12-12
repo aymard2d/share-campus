@@ -60,3 +60,80 @@ body {
   margin-top: 36%;
 
 }
+
+
+
+.friendlist {
+  width: 38%;
+  height: 40%;
+  left: 849px;
+  top: 1055px;
+  background: rgba(255, 190, 190, 0.43);
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: bold;
+  padding-left: 2%;
+  margin-top: 5%;
+  padding-top: 4%;
+  padding-left: 4%;
+
+}
+
+h3 {
+  font-size: 20px;
+  color: #E84B3B ;
+  justify-content: center;
+  display: grid;
+  position: absolute;
+  margin-left: 4%;
+  margin-top: 1%;
+}
+
+h1 {
+  font-size: 30px;
+
+}
+
+
+
+
+.btn-friend {
+  display: inline-block;
+  border: 2px solid #4a5568;
+  background-color: #48a3af;
+  color: #fff;
+  font-size: 90%;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.btn-friend::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  opacity: 0.2;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-friend:hover {
+  background-color: #fff;
+  color: #4a5568;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.btn-friend:hover::before {
+  width: 200%;
+  height: 200%;
+}

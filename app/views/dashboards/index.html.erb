@@ -31,20 +31,23 @@
   <% end %>
   <% @friendship_requests.each do |request| %>
     <p>
-      <%= link_to 'Accepter', accept_friend_friendship_path(request), method: :patch %>
-      <%= link_to 'Décliner', decline_friend_friendship_path(request), method: :delete, data: { confirm: 'Êtes-vous sûr?' } %>
       <%= "#{request.user.first_name} #{request.user.last_name} vous a envoyé une demande d'ami" %>
+      <%= link_to 'Accepter',  accept_friendship_path(request), data: { turbo_method: :patch } %>
+      <%= link_to 'Décliner', decline_friendship_path(request), method: :delete, data: { turbo_method: :patch, confirm: 'Êtes-vous sûr?' } %>
     </p>
-  <% end %>
-    <h1>Vos amis :</h1>
-  <% @friendship.each do |friendship| %>
-  <p>
-    <%= "#{friendship.user.first_name}" %>
-  </p>
   <% end %>
 
   </div>
+
   <div class="dashboard-infos">
+  <h3>Tes sharemates :</h3>
+    <div class="friendlist">
+      <% @friendship.each do |friendship| %>
+      <p>
+        <%= "#{friendship.user.first_name} #{friendship.user.last_name}" %>
+      </p>
+      <% end %>
+    </div>
       <%= image_tag("students.jpg", class: "students-img") %>
   </div>
 </div>

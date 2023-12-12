@@ -28,13 +28,13 @@ class FriendshipsController < ApplicationController
   def accept
     friendship = Friendship.find(params[:id])
     friendship.update(status: 'accepted')
-    redirect_to dashboard_path(@dashboard), notice: "Demande d'ami acceptée"
+    redirect_to dashboards_path, notice: "Demande d'ami acceptée"
   end
 
   def decline
     friendship = Friendship.find(params[:id])
     friendship.destroy
-    redirect_to dashboard_path(@dashboard), notice: "Demande d'ami refusée"
+    redirect_to dashboards_path, notice: "Demande d'ami refusée"
   end
 
   private

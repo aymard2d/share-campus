@@ -17,6 +17,7 @@ User.destroy_all
 Library.destroy_all
 Message.destroy_all
 Event.destroy_all
+Friendship.destroy_all
 
 date = Date.today
 time = Time.now
