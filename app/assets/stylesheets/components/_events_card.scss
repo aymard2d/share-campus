@@ -9,23 +9,44 @@
   // background: linear-gradient(180deg, #BA2749 0%, #BC2C4C 0.01%, #FFDDAA 85.94%, #FFDEAA 100%);
 }
 
+.display-event {
+  margin-left: 40px;
+  margin-top: 67px;
+}
+
 .event-cards {
   justify-items: center;
   width: auto ;
   padding: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  gap: 30px;
+  background: linear-gradient(180deg, #1F7E8A 0%, #67A1A9 99.97%, #94B7BB 99.98%, #B3C6C9 99.99%, #D9D9D9 100%);
+  border-radius: 25px;
 }
 
 .event-card {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  
+  width: 28rem;
+  // box-shadow: 2px 2px 2px 3px rgb(26, 102, 112);
+  border-radius: 20px;
+  border: solid rgb(26, 102, 112) 2px;
+
+    img {
+    border-radius: 20%;
+    height: 120px;
+    width: 120px;
+  }
+
+    p {
+      color: rgb(60, 137, 149);
+      font-size: 14px;
+      margin: 0 auto;
+    }
 }
 
 .event-card img {
@@ -34,10 +55,20 @@
   object-fit: cover;
 }
 
+
+.event-intro {
+  color: rgb(252, 140, 29);
+  border-bottom: solid 2px rgb(252, 140, 29);
+  font-weight: bold;
+}
+
 .event-card h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: rgb(32, 128, 140);
+  font-weight: lighter;
+  font-size: large;
 }
 
 .event-card-produce p {
@@ -46,6 +77,12 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: black;
+}
+
+.event-infos {
+  text-align: center;
+  width: 267px;
 }
 
 .card-product .card-product-infos {
