@@ -17,11 +17,15 @@
       <div class="event-cards" data-add-event-target="list">
         <% @events.each do |event| %>
           <%= link_to "events/#{event.id}", data: { action:  "click->display-event-card#display" }, style: 'text-decoration: none' do %>
-            <div class="rectangle27">
-              <h4><%= event.title %></h4>
-              <p><%= event.starting_date %></p>
-              <p><%= event.starting_time %></p>
+            <div class="event-card">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2><%= event.title %></h2>
+                <p><%= event.starting_date %></p>
+                <p><%= event.starting_time %></p>
+              </div>
             </div>
+
           <% end %>
         <% end %>
       </div>

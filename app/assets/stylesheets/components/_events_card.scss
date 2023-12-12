@@ -6,7 +6,7 @@
   left: 139px;
   top: 499px;
 
-  background: linear-gradient(180deg, #BA2749 0%, #BC2C4C 0.01%, #FFDDAA 85.94%, #FFDEAA 100%);
+  // background: linear-gradient(180deg, #BA2749 0%, #BC2C4C 0.01%, #FFDDAA 85.94%, #FFDEAA 100%);
 }
 
 .event-cards {
@@ -15,4 +15,39 @@
   padding: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+}
+
+.event-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  
+}
+
+.event-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.event-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.event-card-produce p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
 }
