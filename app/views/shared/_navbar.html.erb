@@ -9,7 +9,9 @@
           <i><Home class="fa-solid fa-house home-logo"></i>
         <% end %>
         <div class="share-txt">Share</div>
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://img.freepik.com/vecteurs-premium/avatar-jeune-homme-souriant-homme-moustache-barbe-brune-cheveux-portant-pull-jaune-sweat-shirt-3d-vecteur-personnes-illustration-personnage-style-minimal-dessin-anime_365941-860.jpg" />
+        <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
+        </div>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
             <%= link_to users_path, class: "dropdown-item", style: 'text-decoration: none' do  %>
