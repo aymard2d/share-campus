@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="display-user-card"
 export default class extends Controller {
-  static targets = ["card", "list", "users"]
+  static targets = ["card", "list", "users", "form", "input"]
   connect() {
 
   }
@@ -26,16 +26,17 @@ export default class extends Controller {
   }
 
   filterUser(event) {
-    event.preventDefault()
-    const url = this.usersTarget.href
-    console.log(url);
-    fetch(url, {
-      method: "GET",
-      headers: { "Accept": "text/plain" }
-    })
-    .then(response => response.text())
-    .then((data) => {
-        this.usersTarget.innerHTML= data
+    console.log("hello");
+
+    const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
+    if (this.inputTarget.value !== "") {
+      fetch(url, {headers: {"Accept": "text/plain"}})
+      .then(response => response.text())
+      .then((data) => {
+        this.usersTarget.outerHTML = data
       })
+    } else {
+      this.usersTarget.outerHTML
+    }
   }
 }

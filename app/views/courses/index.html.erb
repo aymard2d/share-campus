@@ -22,12 +22,13 @@
             <div class="list-card">
               <div class="card-img" style="background-image: url(<%= image_path 'book-3.png' %>)">
                 <h3 class="card-title"> <%= course.title %></h3>
-                <h5 class="card-category"><i class="fas fa-chart-pie"></i> <%= course.category %></h5>
+                <h5 class="card-category"><i class="fa-solid fa-book"></i> <%= course.category %></h5>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
+      <div class="main-card-content">
       <%= render "courses/visualisation_card", course: @last_course %>
 
       <div class="main-container-file">
@@ -37,6 +38,7 @@
           data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
         </div>
         <%= render 'courses/add_course_form' %>
+        </div>
       </div>
     </div>
   </div>

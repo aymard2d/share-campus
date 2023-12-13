@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @users = @users.where(sql_subquery, query: "%#{params[:query]}%")
     respond_to do |format|
       format.html
-      format.text { render partial: "users/user_card", locals: {user: @user}, formats: [:html] }
+      format.text { render partial: "users/user_list", locals: {users: @users}, formats: [:html] }
     end
   end
 
