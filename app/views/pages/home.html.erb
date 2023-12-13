@@ -1,45 +1,34 @@
 <div class="container">
-<div class="homepage-container">
-  <div class="image-campus">
-    <img src="https://i.ibb.co/vqh7TQS/Pasted-Graphic-3.png" alt="Image campus", class= "dimensions-campus">
-  </div>
-  <div class="image-laptop">
-    <img src="https://i.postimg.cc/qvTgG1cy/home-1.png" alt="Image accueil 1", class= "dimensions-laptop">
-  </div>
-  <div class="image-teacher">
-    <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2", class= "dimensions-teacher">
-  </div>
   <div class="baseline">
-    <h1 id="welcome" style="color: #3579C3">Bienvenue sur le campus, <%= current_user.first_name %></h1>
-    <p class="welcome-description ml3">Share est le premier campus virtuel créé pour les étudiants par des étudiants.
-      <br>Grâce à Share, vous pourrez collaborer, échanger, tisser du lien et ainsi améliorer votre expérience étudiante.
-      <br>
-      <br>Bonne visite !
-    </p>
+    <h1 class="welcome-sentence">Bienvenue sur le campus, <%= current_user.first_name %></h1>
+    <h3 class="baseline">Seul, nous allons plus vite, ensemble nous allons plus loin</h3>
   </div>
-  <div class="activities">
-    <h1 id="event" style="color: #F9CE06">Évènements à venir</h1>
-    <p class="event-description ml3">Retrouvez toutes les activités organisées par les étudiants ou le corps enseignant.
-      <br>C'est l'occasion de rencontrer de nouvelles personnes, d'améliorer vos connaissances et vos compétences et se détendre.
-      <br>
-      <br>N'oubliez pas d'aller consulter la liste complète des activités et des ajouter à votre agenda !
-    </p>
-    <div class="btn-event bouton-event">
-      <%= link_to "Rendez-vous au BDE", events_path, class: "button-bde text-decoration-none" %>
+  <div class="background-road">
+    <div class="welcome-content d-flex">
+      <%= image_tag("welcome.png", height: 400) %>
+      <div class="welcome-text">
+        <p>
+          Share est votre campus virtuel. 
+          Ici, vous pouvez apprendre, échanger, collaborer et tisser des liens.
+        </p>
+      </div>
+    </div>
+    <div class="second-block d-flex" style="border: 1px solid blue">
+      <div class="left-block" style="border: 1px solid red">
+        <h2>L'espace ressources</h2>
+        <%=  image_tag("resources.png", height: 350) %>
+        <div class="second-block-text">
+          <p>Consulte tous les documents et partage tes cours.</p>
+        </div>
+      </div>
+      <div class="right-block" style="border: 1px solid green">
+        <h2>La bibliothèque</h2>
+        <%=  image_tag("bibli.png", height: 400) %>
+        <div class="second-block-text">
+          <p>Echange des infos, des conseils en dialoguant avec les autres étudiants.</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="bibli">
-    <div class="btn-bibli bouton-bibli" style="height: 0px">
-      <%= link_to "Rendez-vous à la bibliothèque", library_path(@library), class: "button-89 text-decoration-none" %>
-      <p class="bibli-description ml3">Besoin d’aide ou bien un simple renseignement concernant tes cours?
-      <br>La bibliothèque a été conçu afin d’être l’endroit idéal pour échanger entre étudiants et éventuellement travailler à deux comme à plusieurs. Car comme le slogan de Share l’indique : seul nous allons plus vite, ensemble nous allons plus loin.
-      <br>Alors n’hésites pas à t’y rendre!</p>
-     <%# <p class="bibli-description ml3">Besoin d’aide ou bien un simple renseignement concernant tes cours? La bibliothèque a été conçu afin d’être l’endroit idéal pour échanger entre étudiants et éventuellement travailler à deux comme à plusieurs. Car comme le slogan de Share l’indique : seul nous allons plus vite, ensemble nous allons plus loin. Alors n’hésites pas à t’y rendre!</p> %>
-    </div>
-  </div>
-</div>
-<%# <div class="mb-5 keywords"><h2>SEUL NOUS ALLONS VITE</h2>
-    <h2>ENSEMBLE NOUS ALLONS PLUS LOIN</h2> %>
-  </div>
-</div>
