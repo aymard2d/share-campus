@@ -1,5 +1,5 @@
 <div class="user-main-container" data-controller="add-event display-event-card">
-  <div>
+  <div class="main-content-user">
     <div class="row justify-content-center mx-5 mb-4 border rounded-pill p-1">
       <%= form_with url: events_path, method: :get, class: "d-flex search-bar" do %>
         <%= text_field_tag :query,
@@ -13,42 +13,55 @@
       <% end %>
     </div>
 
-    <div id="courses" >
+    <div id="courses">
       <div class="event-cards" data-add-event-target="list">
         <% @events.each do |event| %>
           <%= link_to "events/#{event.id}", data: { action:  "click->display-event-card#display" },class: "", style: 'text-decoration: none' do %>
             <div class="event-card">
-              
-              <% if event.category == "Soirée" %>
-                <%= image_tag("party.jpg") %>
-              <% elsif event.category == "Conférence" %>
-                <%= image_tag("conference-2.png") %>
-              <% elsif event.category == "Speed dating" %>
-                <%= image_tag("speed-dating.png") %>
-                <i class="fa-regular fa-heart"></i>
-              <% elsif event.category == "Coaching" %>
-                <%= image_tag("conference-2.png") %>
-              <% elsif event.category == "CAMPUS ALERT" %>
-                <%= image_tag("campus-alert.jpg") %>
-              <% elsif event.category == "Gaming" %>
-                <%= image_tag("gaming.png") %>
-              <% elsif event.category == "Témoignage" %>
-                <%= image_tag("témoignage.jpg")  %>
-                <i class="fa-solid fa-headset"></i>
-              <% elsif event.category == "Tournoi" %>
-                <%= image_tag("tournoi.jpg")  %>
-              <% end %>
+              <div class="event-icon card-category">
+                <% if event.category == "Soirée" %>
+                  <%= image_tag("party1.png") %>
+                <% elsif event.category == "Conférence" %>
+                  <%= image_tag("conference-2.png") %>
+                <% elsif event.category == "Speed dating" %>
+                  <%= image_tag("dating.jpg") %>
+                <% elsif event.category == "Coaching" %>
+                  <%= image_tag("conference-2.png") %>
+                <% elsif event.category == "CAMPUS ALERT" %>
+                  <%= image_tag("campus-alert.jpg") %>
+                <% elsif event.category == "Gaming" %>
+                  <%= image_tag("gaming.png") %>
+                <% elsif event.category == "Témoignage" %>
+                  <%= image_tag("temoignage.png")  %>
+                <% elsif event.category == "Tournoi" %>
+                  <%= image_tag("tournoi.jpg")  %>
+                <% end %>
+              </div>
               <div class="event-infos">
-                <span class="event-intro">Share Event & <%= event.created_by %></span>
+                <div class="card-category">
+                  <% if event.category == "Soirée" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-champagne-glasses"></i></h5>
+                  <% elsif event.category == "Conférence" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-school"></i></h5>
+                  <% elsif event.category == "Speed dating" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-heart"></i></h5>
+                  <% elsif event.category == "Coaching" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-person-chalkboard"></i></h5>
+                  <% elsif event.category == "CAMPUS ALERT" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-bell"></i></h5>
+                  <% elsif event.category == "Gaming" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-headset"></i></h5>
+                  <% elsif event.category == "Témoignage" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-child-reaching"></i></h5>
+                  <% elsif event.category == "Tournoi" %>
+                    <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-headset"></i></h5>
+                  <% end %> 
+                </div>
                 <h2 visu-subtitle><%= event.title %></h2>
                 <p>Date de l'évènement -
                 <%= event.starting_date %><%= event.starting_time %></p>
-                
-  
-
               </div>
             </div>
-
           <% end %>
         <% end %>
       </div>
