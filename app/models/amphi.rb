@@ -1,0 +1,2 @@
+class Amphi < ApplicationRecord
+end

@@ -18,6 +18,7 @@ Library.destroy_all
 Message.destroy_all
 Event.destroy_all
 Friendship.destroy_all
+Amphi.destroy_all
 
 date = Date.today
 time = Time.now
@@ -185,6 +186,11 @@ event8 = Event.create!(user_id: user1.id, created_by: "Le Wagon", starting_date:
 event9 = Event.create!(user_id: user1.id, created_by: "SYJA CORP", starting_date: , title: "Soirée de fin de batch 1438", category: "Soirée", description: "Une vraie soirée. Pas comme l'autre truc éclaté. Faut juste qu'on trouve la date et de la thune pour les billets de train de tout le monde ! En attendant, on se boit une mousse vant nos écrans, WOOHOO !")
 event2 = Event.create!(user_id: user1.id, created_by: "Juju", starting_date: , title: "DB DROP", category: "CAMPUS ALERT", description: "J'suis admin, tu va fer kwa ? Lololololol.")
 
+
+amphi1 = Amphi.create!(name: "Jade")
+amphi2 = Amphi.create!(name: "Sarah")
+amphi3 = Amphi.create!(name: "Eva")
+amphi4 = Amphi.create!(name: "Alexis")
 
 
 puts "champion"

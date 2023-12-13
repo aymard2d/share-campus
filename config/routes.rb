@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'amphis/index'
+  get 'amphis/show'
   get 'user_events/create'
   get 'events/new'
   get 'events/index'
@@ -43,4 +45,6 @@ Rails.application.routes.draw do
       end
       resource :dashboards, only: %i[show]
     end
+
+  resources :amphis, only: [:index, :show]
 end
