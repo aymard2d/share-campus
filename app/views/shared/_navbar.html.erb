@@ -9,10 +9,12 @@
           <i><Home class="fa-solid fa-house home-logo"></i>
         <% end %>
         <div class="share-txt">Share</div>
+
         <% if user_signed_in?  %>
           <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
           </div>
+
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
             <%= link_to users_path, class: "dropdown-item", style: 'text-decoration: none' do  %>
