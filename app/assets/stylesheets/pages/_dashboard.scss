@@ -1,11 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-
 .dashboard-cours {
   display: flex;
   justify-content: flex-start; /* Aligne les éléments à gauche */
@@ -14,32 +6,87 @@ body {
   width: 50%;
 }
 
+#create {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 2px #FFE3E6;
+  padding: 10px;
+  border-radius: 15px;
+  padding-bottom: 0px;
+}
+
+.fa-pen {
+  font-weight: lighter;
+}
+
+.list-cards {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 2px #48a3af;
+  padding: 10px;
+  border-radius: 15px;
+  padding-bottom: 0px;
+}
+
 .cours-details {
-  list-style: none;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 11px 13px 12px rgba(0, 0, 0, 0.1);
-  margin: 16px;
   padding: 16px;
-  width: 40%; /* Occupe 25% de la largeur */
+
+  width: 400px; /* Occupe 25% de la largeur */
   text-align: center;
   box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur */
-  height: 265px;
-
+  height: 110px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.616);
 }
 
-.cours-li {
-  margin-bottom: 10px;
+.cours-card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    height: 80px;
+    align-items: start;
 }
 
-.pdf {
-  width: 35%;
-  height: auto;
+#cours-pdf {
+  width: 60px ;
+  height: 80px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
+#btn-fav {
+  background-color: #BA2749;
+  border-color: #BA2749;
+  height: 30px;
+  width: 3Opx;
+}
 
+.course-title-dash {
+  font-size: 16px;
+  color: #48a3af ;
+}
+
+.category-course-dash {
+  font-size: 15px;
+  font-family: raleway;
+  color: #BA2749;
+}
+
+.icone {
+  margin-right: 10px;
+}
+
+.course-date {
+  font-family: raleway;
+  color:grey ;
+}
+
+
+.link-cards {
+  text-decoration: none;
+}
 
 .dashboard-infos{
   display: flex;
