@@ -1,7 +1,7 @@
 
-<h1>Vos contributions</h1>
 <div class="dashboard-main">
   <div class="dashboard-cours">
+  <h3 id="title-dash">Vos contributions</h3>
     <div class="list-cards" id="create">
       <% @user_courses.each do |course| %>
         <div class="cours-details">
@@ -15,8 +15,9 @@
         </div>
       <% end %>
     </div>
+  </div>
   <div class="favoris">
-    <h1>Vos favoris</h1>
+    <h3 id="title-dash">Vos favoris</h3>
     <div class="list-cards">
       <% @likes.each do |like| %>
         <%= link_to "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/#{ENV["RAILS_ENV"]}/#{like.course.document.key}", target: :blank, class: "link-cards" do %>
@@ -34,29 +35,45 @@
     </div>
   </div>
 
-  <% @friendship_requests.each do |request| %>
-    <p>
-      <%= "#{request.user.first_name} #{request.user.last_name} vous a envoyé une demande d'ami" %>
-      <%= link_to 'Accepter',  accept_friendship_path(request), data: { turbo_method: :patch } %>
-      <%= link_to 'Décliner', decline_friendship_path(request), method: :delete, data: { turbo_method: :patch, confirm: 'Êtes-vous sûr?' } %>
-    </p>
-  <% end %>
 
-  </div>
 
-  <div class="dashboard-infos">
-  <h3 id="sharemates">Tes sharemates :</h3>
+  <div class="friends">
+    <div>
+      <h3 id="title-dash">Tes sharemates </h3>
+    </div>
     <div class="friendlist">
       <% @jsp.each do |friendship| %>
-      <p>
         <% if friendship.user == current_user  %>
-        <%= "#{friendship.friend.first_name} #{friendship.friend.last_name}" %>
+            <div class="friend">
+              <%= cl_image_tag friendship.friend.photo.key, crop: :fill, format: :jpg, class: "avatar-large-dashboard" %>
+              <p class="name"> <%= "#{friendship.friend.first_name} #{friendship.friend.last_name}" %> </p>
+            </div>
         <% else %>
-        <%= "#{friendship.user.first_name} #{friendship.user.last_name}" %>
+          <div class="friend">
+            <%= cl_image_tag friendship.user.photo.key, crop: :fill, format: :jpg, id:"cours-pdf" %>
+            <p class="name"> <%= "#{friendship.user.first_name} #{friendship.user.last_name}" %> </p>
+          </div>
         <% end %>
-      </p>
       <% end %>
     </div>
-      <%= image_tag("students.jpg", class: "students-img") %>
+      <% @friendship_requests.each do |request| %>
+        <p>
+          <%= "#{request.user.first_name} #{request.user.last_name} vous a envoyé une demande d'ami" %>
+          <%= link_to 'Accepter',  accept_friendship_path(request), data: { turbo_method: :patch } %>
+          <%= link_to 'Décliner', decline_friendship_path(request), method: :delete, data: { turbo_method: :patch, confirm: 'Êtes-vous sûr?' } %>
+        </p>
+      <% end %>
+  </div>
+    <%= image_tag("dashboard.jpg", class: "students-img") %>
+
+    <div class="card-user-dashboard">
+    <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar-large-preview", alt: "avatar-large" %>
+    <h5 class="user-card-title"> <%= current_user.first_name %></h5>
+    <h5 class="user-card-title"> <%= current_user.last_name %></h5>
+    <h6 class="link-card"> #<%= current_user.batch %></h6>
+    <p> <%= current_user.description %></p>
+      <button class= "btn-update">
+        Modifier mon profil
+      </button>
   </div>
 </div>
