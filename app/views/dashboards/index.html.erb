@@ -2,33 +2,38 @@
 <h1>Vos contributions</h1>
 <div class="dashboard-main">
   <div class="dashboard-cours">
-  <% @user_courses.each do |course| %>
-  <div class="cours-details">
-    <ul style="list-style-type: none;">
-      <div class="cours-li">
-        <li><%= course.title %></li>
-        <li><%= course.category %></li>
-        <li><%= course.date %></li>
-        <li><%= cl_image_tag course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></li>
-      </div>
-    </ul>
-  </div>
-  <% end %>
-  <h1>Vos favoris</h1>
-  <% @likes.each do |like| %>
-    <div class="cours-details">
-      <ul style="list-style-type: none;">
-        <div class="cours-li">
-          <%= link_to "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/#{ENV["RAILS_ENV"]}/#{like.course.document.key}", target: :blank do %>
-          <li><%= like.course.title %></li>
-          <li><%= like.course.category %></li>
-          <li><%= like.course.date %></li>
-          <li><%= cl_image_tag like.course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, class:"pdf" %></li>
-          <% end %>
+    <div class="list-cards" id="create">
+      <% @user_courses.each do |course| %>
+        <div class="cours-details">
+          <%= cl_image_tag course.document.key, width: 250, height: 300,crop: :fill, format: :jpg, id:"cours-pdf" %>
+          <div class="cours-card">
+            <h4 class="course-title-dash"> <%= course.title %> </h4>
+            <h5 class="category-course-dash"> <i class="fa-solid fa-book icone"></i><%= course.category.capitalize %> </h5>
+            <p class="course-date"> <%= course.date %> </p>
+          </div>
+          <button class="button-24 text-decoration-none" id="btn-fav"> <i class="fa-solid fa-pen" style="color: #ffffff;"></i>  </button>
         </div>
-      </ul>
+      <% end %>
     </div>
-  <% end %>
+  <div class="favoris">
+    <h1>Vos favoris</h1>
+    <div class="list-cards">
+      <% @likes.each do |like| %>
+        <%= link_to "https://res.cloudinary.com/dnqkzzqga/image/upload/c_fill,h_1000,w_1000/v1/#{ENV["RAILS_ENV"]}/#{like.course.document.key}", target: :blank, class: "link-cards" do %>
+          <div class="cours-details">
+              <%= cl_image_tag like.course.document.key, crop: :fill, format: :jpg, id:"cours-pdf" %>
+            <div class="cours-card">
+              <h4 class="course-title-dash"> <%= like.course.title %> </h4>
+              <h5 class="category-course-dash"> <i class="fa-solid fa-book icone"></i><%= like.course.category.capitalize %> </h5>
+              <p class="course-date"> <%= like.course.date %> </p>
+            </div>
+            <%= button_to '♥', course_likes_path(like), method: :post, class: "button-24 text-decoration-none", id:"btn-fav"%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <% @friendship_requests.each do |request| %>
     <p>
       <%= "#{request.user.first_name} #{request.user.last_name} vous a envoyé une demande d'ami" %>
