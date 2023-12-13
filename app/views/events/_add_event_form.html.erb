@@ -3,6 +3,7 @@
     <%= f.input :title, label: "Titre" %>
     <%= f.input :description, as: :text, label: "Description" %>
     <%= f.input :category, collection: ["Conférence", "Soirée", "Témoignage", "CAMPUS ALERT", "Speed dating", "Tournoi", "Gaming"], label: "Sélectionnez une catégorie" %>
+    <%= f.input :location, collection: ["Campus", "Amphithéâtre Sarah", "Amphithéâtre Alexis", "Amphithéâtre Eva", "Salle Topaze : BDE", "Salle Améthyste : BDE", "Salle Jade : BDE", "Salle Emeraude : BDE"], label: "Sélectionnez un lieu" %>
     <%= f.input_field :starting_date, as: :hidden, value: Date.today %>
     <%# rajouter html 5 pour choisir un créneau horaire %>
     <%#= f.input_field :starting_time, :html5, label: "Choisissez un créneau horaire" %>
