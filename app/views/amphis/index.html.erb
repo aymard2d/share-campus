@@ -1,0 +1,8 @@
+<h1>Liste des amphis</h1>
+
+
+<% @amphis.each do |amphi| %>
+  <%= link_to amphi_path(amphi) do %>
+  <%= amphi.name %>
+  <% end %>
+<% end %>

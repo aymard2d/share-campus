@@ -10,7 +10,7 @@
         <% end %>
         <div class="share-txt">Share</div>
         <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
+        <%#= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
         </div>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>

@@ -18,6 +18,7 @@ Library.destroy_all
 Message.destroy_all
 Event.destroy_all
 Friendship.destroy_all
+Amphi.destroy_all
 
 date = Date.today
 time = Time.now
@@ -193,6 +194,11 @@ event17 = Event.create!(location: "Salle Rubis : BDE",user_id: user1.id, created
 event18 = Event.create!(location: "Amphithéâtre Eva",user_id: user1.id, created_by: "Valerian", starting_date: , title: "Expat en remote, comment faire ?", category: "Témoignage", description: "Valérian vous partage son expérience d'expat en tant que développeur junior. Comment organiser ses RDV avec le décalage horaire, comment passer les entretiens d'embauche à distance et plein d'autres questions. Super expérience de témoignage d'un éleveur de moutons qui bosse aussi dans la tech")
 event19 = Event.create!(location: "Salle Emeraude : BDE",user_id: user1.id, created_by: "Aymard", starting_date: , title: "On recherche des dev pour coder SHARE", category: "Speed dating", description: "Venez participer à l'expérience incroyable de coder une app dont l'avenir est assuré. Plus d'infos : contact@share.fr.")
 
+
+amphi1 = Amphi.create!(name: "Jade")
+amphi2 = Amphi.create!(name: "Sarah")
+amphi3 = Amphi.create!(name: "Eva")
+amphi4 = Amphi.create!(name: "Alexis")
 
 
 puts "champion"
