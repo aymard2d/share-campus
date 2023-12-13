@@ -10,7 +10,11 @@
     <img src="https://i.ibb.co/zfkqgBL/Pasted-Graphic-2.png" alt="Image accueil 2", class= "dimensions-teacher">
   </div>
   <div class="baseline">
-    <h1 id="welcome" style="color: #3579C3">Bienvenue sur le campus, <%= current_user.first_name %></h1>
+    <% if current_user.present? %>
+      <h1 id="welcome" style="color: #3579C3">Bienvenue sur le campus, <%= current_user.first_name %></h1>
+    <% else %>
+      <h1 id="welcome" style="color: #3579C3">Bienvenue sur le campus !</h1>
+    <% end %>
     <p class="welcome-description ml3">Share est le premier campus virtuel créé pour les étudiants par des étudiants.
       <br>Grâce à Share, vous pourrez collaborer, échanger, tisser du lien et ainsi améliorer votre expérience étudiante.
       <br>
