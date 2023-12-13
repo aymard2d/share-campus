@@ -108,13 +108,14 @@
   margin-top: 40px;
   margin-left: 40px;
   padding: 15px;
-  width: 250px;
+  width: 300px;
   height: auto;
   display: flex;
   flex-direction: column;
   box-shadow: 1px 1px 1px 2px #FFE3E6;
   overflow-wrap: anywhere;
   font-family: raleway;
+
 }
 
 #batch {
@@ -127,4 +128,25 @@
   color: #BA2749;
   margin: 50px 15px 15px 15px;
   text-align: center;
+}
+
+#code {
+  height: 64px;
+  width: 64px;
+  margin: 10px;
+}
+
+#recompense {
+  height: 60px;
+  width: 60px;
+  margin-top: 15px;
+}
+
+#mood {
+  margin: 15px;
+}
+
+.badges {
+  display: flex;
+  flex-direction: row;
 }
