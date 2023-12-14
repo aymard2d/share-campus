@@ -47,23 +47,23 @@
     <div class="third-block d-flex">
       <div class="left-block">
         <h2>La friendzone</h2>
-        <%=  image_tag("users-5.jpg", height: 350) %>
+        <%=  image_tag("users-5.jpg", height: 350, class: "friendzone-img") %>
         <div class="third-block-text">
-          <p>Enrichis ton réseau et crée de nouvelles relations en consultant la liste des membres du campus.
+          <p class="friendzone-text">Enrichis ton réseau et crée de nouvelles relations en consultant la liste des membres du campus.
             Et garde le contact avec tes amis.</p>
-          <div  class="resources-link">
+          <div  class="friendzone-link">
             <%= link_to "Se rendre à la friendzone", users_path, class: "button-78" %>
           </div>
         </div>
       </div>
 
-      <div class="right-block">
-        <h2>Le bureau des élèves</h2>
+      <div class="right-block bde-block">
+        <h2 class="bde-h2">Le bureau des élèves</h2>
         <%=  image_tag("bde-3.jpg", height: 350) %>
         <div class="third-block-text">
-          <p>Retrouve toutes les activités organisées par les membres du campus.
+          <p class="bde-text">Retrouve toutes les activités organisées par les membres du campus.
             C'est l'occasion de rencontrer de nouvelles personnes, et de te détendre.</p>
-          <div  class="resources-link">
+          <div  class="bde-link">
             <%= link_to "Se rendre au BDE", events_path, class: "button-78" %>
           </div>
         </div>
