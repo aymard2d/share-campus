@@ -8,23 +8,24 @@
       <%= f.input :first_name,
                   # required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "first_name" }%>
+                  input_html: { autocomplete: "Prénom" }%>
       <%= f.input :last_name,
                   # required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "last_name" }%>
+                  input_html: { autocomplete: "Nom" }%>
       <%= f.input :batch,
                   # required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "batch" }%>
+                  input_html: { autocomplete: "Batch" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  input_html: { autocomplete: "Email" }%>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password" }
+                  label: "Mot de passe" %>
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
