@@ -18,11 +18,12 @@
   text-align: start;
 }
 #event_title, #event_description, #course_title,
-#course_summarize, #course_document, #user_email, #user_password {
+#course_summarize, #course_document, #user_email,
+#user_password, #user_first_name, #user_last_name, #user_batch,
+#user_password_confirmation  {
   border-radius: 15px;
   max-width: 250px;
   border: solid 1px #148999c7;
-
 }
 
 .form-actions {
@@ -62,4 +63,15 @@
 #new_course {
   width: 280px;
 
+}
+
+.registration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#register {
+  color: #BA2749;
+  text-align: center;
 }
