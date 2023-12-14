@@ -1,7 +1,7 @@
 <div class="container home-container">
   <div class="baseline">
 
-               <% if current_user.present? %>
+  <% if current_user.present? %>
     <h1 class="welcome-sentence">Bienvenue sur le campus, <%= current_user.first_name %></h1>
   <% else %>
   <h1 class="welcome-sentence">Bienvenue sur le campus !</h1>
@@ -14,19 +14,23 @@
       <%= image_tag("welcome1.png", height: 400) %>
       <div class="welcome-text">
         <p>
-          Share est votre campus virtuel. 
+          Share est votre campus virtuel.
           Ici, vous pouvez apprendre, échanger, collaborer et tisser des liens.
         </p>
       </div>
+        <div class="dashboard-link">
+          <%= link_to "Consulter mon dashboard", dashboards_path, class: "button-78" %>
+        </div>
     </div>
     <div class="second-block d-flex">
       <div class="left-block">
         <h2>L'espace ressources</h2>
         <%=  image_tag("students.jpg", height: 350) %>
         <div class="second-block-text">
-          <p>Consulte tous les ressources mises en lignes par les membres du campus. 
+          <p>Consulte tous les ressources mises en lignes par les membres du campus.
             Partage tes cours également afin de participer au travail collaboratif.</p>
           <div  class="resources-link">
+
             <%= link_to "Se rendre à l'espace ressources", courses_path, class: "button-78" %>
           </div>
         </div>
@@ -35,7 +39,7 @@
         <h2>La bibliothèque</h2>
         <%=  image_tag("bibli3.jpg", height: 400) %>
         <div class="second-block-text">
-          <p>La bibliothèque est un lieu d'échange et de partage. 
+          <p>La bibliothèque est un lieu d'échange et de partage.
             <br>N'hésite pas à venir poser et recueillir infos et conseils en dialoguant avec les étudiants et les profs.</p>
           <div class="bibli-link">
             <%= link_to "Se rendre à la bibliothèque", library_path(@library), class: "button-78" %>
@@ -71,5 +75,3 @@
     </div>
   </div>
 </div>
-
-
