@@ -5,10 +5,11 @@
   font-weight: 500;
   line-height: 1.2;
   color: var(--bs-heading-color);
-  width: 90%;
+  width: 40%;
   background: linear-gradient(180deg, #C4C4C4 0%, rgba(196, 196, 196, 0.609375) 36.46%, rgba(196, 196, 196, 0) 100%);
   border-radius: 30px;
   height: 400px;
+  margin-right: 5%;
 }
 
   h1 {
@@ -26,8 +27,9 @@
 
 #welcome-chat {
   font-size: x-large;
-  color: white;
-  padding: 0px 125px;
+  color: black;
+  font-size: 13px;
+  margin-left: 64%;
 }
 
 #envoyer{
@@ -104,4 +106,3 @@
 // font-weight: 200;
 // font-size: 10px;
 // line-height: 12px;
-
