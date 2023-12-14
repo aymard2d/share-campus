@@ -5,4 +5,5 @@ class Friendship < ApplicationRecord
   validates :user_id, uniqueness: { scope: :friend_id, message: "Vous êtes déjà ami avec cette personne" }
   validates :friend_id, uniqueness: { scope: :user_id, message: "Vous êtes déjà ami avec cette personne" }
   validates_uniqueness_of :user_id, scope: :friend_id
+  has_many :friends, foreign_key: :friend_id, dependent: :destroy
 end
