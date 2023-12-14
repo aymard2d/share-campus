@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container home-container">
   <div class="baseline">
     <h1 class="welcome-sentence">Bienvenue sur le campus, <%= current_user.first_name %></h1>
     <h3 class="baseline">Seul, nous allons plus vite, ensemble nous allons plus loin</h3>
   </div>
   <div class="background-road">
     <div class="welcome-content d-flex">
-      <%= image_tag("welcome.png", height: 400) %>
+      <%= image_tag("welcome1.png", height: 400) %>
       <div class="welcome-text">
         <p>
           Share est votre campus virtuel. 
@@ -13,22 +13,57 @@
         </p>
       </div>
     </div>
-    <div class="second-block d-flex" style="border: 1px solid blue">
-      <div class="left-block" style="border: 1px solid red">
+    <div class="second-block d-flex">
+      <div class="left-block">
         <h2>L'espace ressources</h2>
-        <%=  image_tag("resources.png", height: 350) %>
+        <%=  image_tag("students.jpg", height: 350) %>
         <div class="second-block-text">
-          <p>Consulte tous les documents et partage tes cours.</p>
+          <p>Consulte tous les ressources mises en lignes par les membres du campus. 
+            Partage tes cours également afin de participer au travail collaboratif.</p>
+          <div  class="resources-link">
+            <%= link_to "Se rendre à l'espace ressources", courses_path, class: "button-78" %>
+          </div>
         </div>
       </div>
-      <div class="right-block" style="border: 1px solid green">
+      <div class="right-block">
         <h2>La bibliothèque</h2>
-        <%=  image_tag("bibli.png", height: 400) %>
+        <%=  image_tag("bibli3.jpg", height: 400) %>
         <div class="second-block-text">
-          <p>Echange des infos, des conseils en dialoguant avec les autres étudiants.</p>
+          <p>La bibliothèque est un lieu d'échange et de partage. 
+            <br>N'hésite pas à venir poser et recueillir infos et conseils en dialoguant avec les étudiants et les profs.</p>
+          <div class="bibli-link">
+            <%= link_to "Se rendre à la bibliothèque", library_path(@library), class: "button-78" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="third-block d-flex">
+      <div class="left-block">
+        <h2>La friendzone</h2>
+        <%=  image_tag("users-5.jpg", height: 350) %>
+        <div class="third-block-text">
+          <p>Enrichis ton réseau et crée de nouvelles relations en consultant la liste des membres du campus.
+            Et garde le contact avec tes amis.</p>
+          <div  class="resources-link">
+            <%= link_to "Se rendre à la friendzone", users_path, class: "button-78" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-block">
+        <h2>Le bureau des élèves</h2>
+        <%=  image_tag("bde-3.jpg", height: 350) %>
+        <div class="third-block-text">
+          <p>Retrouve toutes les activités organisées par les membres du campus.
+            C'est l'occasion de rencontrer de nouvelles personnes, et de te détendre.</p>
+          <div  class="resources-link">
+            <%= link_to "Se rendre au BDE", events_path, class: "button-78" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
