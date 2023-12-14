@@ -1,5 +1,5 @@
 .chatroom {
-  margin-top: 54px;
+  margin-top: 5px;
   margin-bottom: 0.5rem;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: 500;
@@ -10,7 +10,7 @@
   border-radius: 30px;
   height: 400px;
   margin-right: 5%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
   h1 {
@@ -20,7 +20,7 @@
   }
 
   .messages {
-    height: 400px;
+    height: 813px;
     overflow: scroll;
     padding: 1rem;
   }
@@ -38,12 +38,12 @@
   height: 120%;
   align-items: center;
   margin-top: 10px;
-
-
   background: rgba(0, 0, 0, 0.16);
   border-radius: 30px;
   font-weight: 200;
   font-size: 14px;
+  margin-left: 23px;
+  text-align: center;
 }
 
 // To style the wrapping div
