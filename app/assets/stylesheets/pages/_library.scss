@@ -1,3 +1,59 @@
+
+.library-container {
+  height: 1200px;
+}
+
+.bibli-image {
+  width: 490px;
+  height: 350px;
+  position: relative;
+  left: 78px;
+}
+
+.bibli-table {
+  width:650px;
+  flex-direction: column;
+  margin-left: 16px;
+
+  p {
+    width: 420px;
+    position: relative;
+    left: 110px;
+    font-size: 18px;
+    margin-top: 6px;
+  }
+}
+
+.resources-link-bibli {
+  position: relative;
+  left: 144px;
+}
+
+
+.chat-colonne {
+  width: 650px;
+  border:1px solid blue;
+}
+
+.table-space {
+  
+  h2 {
+    text-align: center;
+    color: #BA2749;
+    margin-top: 30px;
+  }
+
+  img {
+    width: 500px;
+    padding-top: 20px;
+    margin-top: 10px;
+    left: 10px;
+    position: relative;
+    left: 63px;
+  }
+}
+
+
 .banner-lib {
   background-size: cover;
   background-position: center;
