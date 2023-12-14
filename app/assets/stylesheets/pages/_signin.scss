@@ -1,6 +1,64 @@
 .signin {
   width: 600px;
   justify-self: center;
-
+  text-align: center;
+  margin-top: 20px;
 }
 
+#login {
+  color: #BA2749;
+}
+.formsign {
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  text-align: start;
+}
+.form-control {
+  border-radius: 15px;
+  max-width: 250px;
+  border: solid 1px #148999c7;
+  
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.sign-links {
+  margin-bottom: 15px;
+  text-decoration: none;
+  text-align: center;
+  color: #BA2749;
+    &:hover {
+      color: #ba274984;
+    }
+}
+
+.links {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  margin-left: 10px;
+}
+
+.user_remember_me {
+  margin-left: 10px;
+}
+
+.form-select {
+  border-radius: 15px;
+  border: solid 1px #148999c7;
+}
+
+#new_course {
+  width: 280px;
+
+}
