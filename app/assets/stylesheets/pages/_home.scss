@@ -201,6 +201,19 @@
   }
 }
 
+.last-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+
+  img {
+    margin: 20px;
+    height: 300px ;
+    margin-top: 60px;
+    margin-right: 75px;
+  }
+}
+
 /* CSS */
 .button-78 {
   align-items: center;
