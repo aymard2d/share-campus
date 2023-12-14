@@ -1,5 +1,5 @@
 .courses-container {
-  margin: 30px auto;
+  margin: 30px 50px;
 }
 
 .all-cards:hover .list-card {
@@ -21,15 +21,17 @@
 .all-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
+  gap: 25px;
   justify-content: center;
   margin-right: 15px;
 }
 
 #courses {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
   margin-top: 10px;
+  margin-left: 65px;
+  justify-items: center;
 }
 
 .list-card {

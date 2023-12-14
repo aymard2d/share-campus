@@ -17,11 +17,12 @@
   flex-wrap: wrap;
   text-align: start;
 }
-.form-control {
+#event_title, #event_description, #course_title,
+#course_summarize, #course_document, #user_email, #user_password {
   border-radius: 15px;
   max-width: 250px;
   border: solid 1px #148999c7;
-  
+
 }
 
 .form-actions {

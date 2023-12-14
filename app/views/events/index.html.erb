@@ -55,7 +55,7 @@
                     <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-child-reaching"></i></h5>
                   <% elsif event.category == "Tournoi" %>
                     <h5 class="card-category"><span class="event-intro">Share Event</span><i class="fa-solid fa-headset"></i></h5>
-                  <% end %> 
+                  <% end %>
                 </div>
                 <h2 visu-subtitle><%= event.title %></h2>
                 <p>Date de l'évènement -
@@ -67,16 +67,19 @@
       </div>
     </div>
   </div>
-      
-  <div class="display-event">
-    <%= render "events/visualisation_event", event: @last_event %>
-    <div class="main-container-file">
-      <div class="file-download">
-        <img src="<%= image_path 'add-event.jpg'%>" class="icon-file" >
-        <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
+  <div>
+    <div class="display-event">
+      <div>
+
+        <%= render "events/visualisation_event", event: @last_event %>
       </div>
-      <%= render 'events/add_event_form', event: @event%>
+      <div class="main-container-file">
+        <div class="file-download">
+          <img src="<%= image_path 'add-event.jpg'%>" class="icon-file" >
+          <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
+        </div>
+        <%= render 'events/add_event_form', event: @event%>
+      </div>
     </div>
   </div>
 </div>
-
