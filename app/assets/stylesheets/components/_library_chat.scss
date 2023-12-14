@@ -67,12 +67,35 @@
   background-color: rgb(31, 126, 138);
   color: white;
   padding: 5px;
+  display: flex;
+  flex-direction: row;
 }
 
 .receiver-style {
   background-color: rgb(225, 160, 175);
   color: white;
   padding: 5px;
+}
+
+.avatar-large-message {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #FFE3E6;
+  margin-right: 10px;
+}
+
+.message-content {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.time {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: rgb(120, 117, 117);
 }
 
 
