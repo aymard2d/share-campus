@@ -2,10 +2,10 @@
 <div class="baseline">
   <h1 class="welcome-sentence">Bienvenue à la bibliothèque !</h1>
 </div>
-  
+
 <div class="container library-container">
   <div class="bibli-table d-flex">
-      
+
     <%= image_tag("bibli2.jpg", height: 400, class: "bibli-image") %>
     <p>
       La bibliothèque met à votre disposition de nombreuses ressources que vous pouvez consulter, emprunter et télécharger.
@@ -23,13 +23,13 @@
   </div>
 
   <div class="chatroom">
-    <div 
+    <div
       data-controller="library-subscription"
       data-library-subscription-library-id-value="<%= @library.id %>"
       data-library-subscription-current-user-id-value="<%= current_user.id %>">
       <div class="messages" data-library-subscription-target="messages">
         <% @library.messages.each do |message| %>
-          <div class="message-row d-flex border <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
             <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
               <%= render "messages/message", message: message %>
             </div>
