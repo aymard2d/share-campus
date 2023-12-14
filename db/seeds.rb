@@ -16,9 +16,9 @@ Course.destroy_all
 Message.destroy_all
 Library.destroy_all
 Event.destroy_all
-Friendship.destroy_all
 Amphi.destroy_all
 User.destroy_all
+Friendship.destroy_all
 
 date = Date.today
 time = Time.now
@@ -75,6 +75,7 @@ user20 = User.create!(first_name: "Florent", last_name: "Et...voilà", email: "f
 user21 = User.create!(first_name: "Oliv", last_name: "GitPushOriginMain", email: "oliv@share.fr", batch: 1440, password: 123444, description:"I am a musician who first wanted to code to contribute to open-source projects. I want to learn web development with Le Wagon as a first step to learn application development later. My ultimate goal is to code for audio applications...")
 user22 = User.create!(first_name: "Hugo", last_name: "LeSangdelaVeine", email: "hugo@share.fr", batch: 1440, password: 123444, description:"Hi my name is Hugo Vetrano, I'm 22! I currently live in Lille and I'm a business student at IÉSEG.")
 
+puts "i*users ok"
 
 user0.photo.attach(io: File.open('app/assets/images/aymard.jpg'),filename: 'aymard.jpg' )
 user0.save
@@ -123,6 +124,7 @@ user21.save
 user22.photo.attach(io: File.open('app/assets/images/hugo.jpg'),filename: 'hugo.jpg' )
 user22.save
 
+puts "users doc ok"
 # SEED DES COURS
 
 course1 = Course.create!(date:, user_id: user1.id, title: 'Introduction à JS', summarize: "Cours introduisant les bases de javascript. Lecture simple et rapide, privilégiez tout de même la pratique à la lecture. JavaScript est un langage de programmation côté client utilisé pour rendre les pages web interactives. Il permet de manipuler le contenu de la page, de répondre aux événements utilisateur et d'interagir avec les serveurs web.", category: "javascript")
@@ -141,6 +143,7 @@ course13 = Course.create!(date:, user_id: user1.id, title: "Introduction à l'OO
 course14 = Course.create!(date:, user_id: user1.id, title: 'Intro à Tailwind CSS', summarize: "Tailwind CSS est un framework CSS utilitaire qui facilite la création de mises en page et de styles en utilisant des classes utilitaires directement dans le code HTML. Plutôt que de définir des styles dans des feuilles de style séparées, Tailwind propose une approche de classe utilitaire pour appliquer des styles directement aux éléments HTML. Il offre un ensemble complet de classes pour des propriétés telles que les marges, les couleurs, les polices, les tailles, etc. Tailwind favorise la rapidité de développement en éliminant la nécessité de créer des styles personnalisés, tout en offrant une flexibilité pour personnaliser et étendre les styles selon les besoins du projet.", category: "css3")
 course15 = Course.create!(date:, user_id: user1.id, title: 'Cours avancé sur Rails', summarize: "Rails est un bon framework simple d'accès et d'apprentissage. Apprenez-en plus via ce cours, avec notamment les Callbacks, les Associations Avancées, le Devise, les API... Et plus encore ! Amusez-vous bien.", category: "ruby on rails")
 
+puts "cours ok"
 
 course1.document.attach(io: File.open('app/assets/images/javascriptcours.pdf'), filename: 'javascriptcours.pdf')
 course1.save
@@ -173,6 +176,7 @@ course14.save
 course15.document.attach(io: File.open('app/assets/images/rails2cours.pdf'), filename: 'rails2cours.pdf')
 course15.save
 
+puts "cours doc ok"
 
 # SEED DES EVENEMENTS
 event1 = Event.create!(location: "Amphithéâtre Sarah",user_id: user1.id, created_by: "SYJA", starting_date: , title: "Comment réussir son pitch", category: "Conférence", description: "Pas envie de pitcher son projet de fin de batch comme tout le monde ? Envie d'exotisme et d'originalité ? Retrouvez toutes nos astuces pour vous faire ouvrir en deux par les profs juste après votre démonstration ! Et sans compter les remarques sur la CSS hein !")
@@ -194,6 +198,7 @@ event17 = Event.create!(location: "Salle Rubis : BDE",user_id: user1.id, created
 event18 = Event.create!(location: "Amphithéâtre Eva",user_id: user1.id, created_by: "Valerian", starting_date: , title: "Expat en remote, comment faire ?", category: "Témoignage", description: "Valérian vous partage son expérience d'expat en tant que développeur junior. Comment organiser ses RDV avec le décalage horaire, comment passer les entretiens d'embauche à distance et plein d'autres questions. Super expérience de témoignage d'un éleveur de moutons qui bosse aussi dans la tech")
 event19 = Event.create!(location: "Salle Emeraude : BDE",user_id: user1.id, created_by: "Aymard", starting_date: , title: "On recherche des dev pour coder SHARE", category: "Speed dating", description: "Venez participer à l'expérience incroyable de coder une app dont l'avenir est assuré. Plus d'infos : contact@share.fr.")
 
+puts "event ok"
 
 amphi1 = Amphi.create!(name: "Jade")
 amphi2 = Amphi.create!(name: "Sarah")
