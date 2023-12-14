@@ -57,6 +57,22 @@
   border: 2px solid white;
 }
 
+.dropdown-menu {
+  border-radius: 6px;
+  padding: 10px;
+  padding-bottom: 0.5px;
+  font-family: Raleway;
+  border: 1px solid  #197783;
+
+}
+.dropdown-menu-end[data-bs-popper] {
+  right: -44px;
+  left: auto;
+}
+
+.dropdown-item {
+  padding: 5px;
+}
 /* BG */
 
 /* position: absolute;
