@@ -12,7 +12,7 @@
 
 .welcome-sentence {
   text-align: center;
-  color: rgb(186, 39, 73); 
+  color: rgb(186, 39, 73);
   font-size: 38px;
 }
 
@@ -32,11 +32,15 @@
   width: 367px;
   left: 246px;
   position: relative;
-  top: 30px;
+  top: 5px;
   font-family: 'Bowlby One SC';
   font-weight: 100;
   font-size: large;
   color: rgb(186, 39, 73);;
+}
+
+.dashboard-list {
+  position: relative;
 }
 
 .second-block {
@@ -47,7 +51,7 @@
     font-family: comfortaa;
   }
 
-  
+
   h2 {
     text-align: center;
     color: #BA2749;
@@ -126,7 +130,7 @@
     position: relative;
   }
 
-  
+
   h2 {
     text-align: center;
     color: #BA2749;
