@@ -5,11 +5,21 @@
     <h5 class="user-card-title"> <%= user.last_name %></h5>
     <h6 class="link-card"> #<%= user.batch %></h6>
     <p> <%= user.description %></p>
-    <%= button_to user_friendships_path(user), method: :post, class: "btn-friend" do %>
-      Envoyer une demande d'ami
+        <% unless @friendship_accepted.empty? %>
+      <p>Tu es déjà ami avec cette personne</p>
+        <% else %>
+      <%= button_to user_friendships_path(user), method: :post, class: "btn-friend" do %>
+        Envoyer une demande d'ami
+      <% end %>
     <% end %>
-    </div>
+  </div>
   <div class="card-badges">
-    <h5 class="user-card-title"> Badges </h5>
-
+    <div>
+      <h5 class="user-card-title"> Badges </h5>
+    </div>
+    <div class="badges">
+      <%= image_tag "code.png" , id: "code" %>
+      <%= image_tag "de-bonne-humeur" ,id: "mood" %>
+      <%= image_tag "recompense.png", id: "recompense" %>
+    </div>
   </div>

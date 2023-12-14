@@ -9,16 +9,26 @@
           <i><Home class="fa-solid fa-house home-logo"></i>
         <% end %>
         <div class="share-txt">Share</div>
-        <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
-        </div>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
-            <%= link_to users_path, class: "dropdown-item", style: 'text-decoration: none' do  %>
-              Mon Batch <%#= current_user.batch %>
-            <% end %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "log-out dropdown-item" %>
-        </div>
+
+        <% if user_signed_in?  %>
+          <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= cl_image_tag current_user.photo.key, width: 250,crop: :fill,  class: "avatar dropdown-toggle", id:"navbarDropdown"%>
+          </div>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to 'Tableau de bord', dashboards_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
+            <%= link_to 'Mon batch', users_path, class: "dropdown-item", style: 'text-decoration: none' %>
+            <%= link_to 'Bibliothèque', library_path(Library.last), class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
+            <%= link_to 'BDE', events_path, class: "dropdown-item tdbord", style: 'text-decoration: none;' %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, data: { turbo_method: :delete }, class: "log-out dropdown-item" %>
+          </div>
+        <% else%>
+          <div  id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "avatar-home.avif" , class: "avatar" %>
+          </div>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -13,12 +13,12 @@
 # Création d'utilisateurs
 
 Course.destroy_all
-User.destroy_all
-Library.destroy_all
 Message.destroy_all
+Library.destroy_all
 Event.destroy_all
 Friendship.destroy_all
 Amphi.destroy_all
+User.destroy_all
 
 date = Date.today
 time = Time.now

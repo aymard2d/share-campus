@@ -22,7 +22,7 @@
             <div class="list-card">
               <div class="card-img" style="background-image: url(<%= image_path 'book-3.png' %>)">
                 <h3 class="card-title"> <%= course.title %></h3>
-                <h5 class="card-category"><i class="fa-solid fa-book"></i> <%= course.category %></h5>
+                <h5 class="card-category"><i class="fa-solid fa-book"></i> <%= course.category.capitalize %></h5>
               </div>
             </div>
           <% end %>

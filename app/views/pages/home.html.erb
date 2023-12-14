@@ -1,7 +1,13 @@
 <div class="container home-container">
   <div class="baseline">
+
+               <% if current_user.present? %>
     <h1 class="welcome-sentence">Bienvenue sur le campus, <%= current_user.first_name %></h1>
+  <% else %>
+  <h1 class="welcome-sentence">Bienvenue sur le campus !</h1>
+    <% end %>
     <h3 class="baseline">Seul, nous allons plus vite, ensemble nous allons plus loin</h3>
+
   </div>
   <div class="background-road">
     <div class="welcome-content d-flex">
