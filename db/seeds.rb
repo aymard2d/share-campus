@@ -17,8 +17,8 @@ Message.destroy_all
 Library.destroy_all
 Event.destroy_all
 Amphi.destroy_all
-User.destroy_all
 Friendship.destroy_all
+User.destroy_all
 
 date = Date.today
 time = Time.now
@@ -27,7 +27,7 @@ event_time = Time
 ending_date = Date.tomorrow
 
 library_1 = Library.create(name: "Chat de la bibliothèque")
-
+puts "library ok"
 # SEED DES UTILISATEURS
 
 
@@ -78,51 +78,51 @@ user22 = User.create!(first_name: "Hugo", last_name: "LeSangdelaVeine", email: "
 puts "i*users ok"
 
 user0.photo.attach(io: File.open('app/assets/images/aymard.jpg'),filename: 'aymard.jpg' )
-user0.save!
+user0.save
 user1.photo.attach(io: File.open('app/assets/images/juju.png'),filename: 'juju.png' )
-user1.save!
+user1.save
 user2.photo.attach(io: File.open('app/assets/images/sarah.jpg'),filename: 'sarah.jpg' )
-user2.save!
+user2.save
 user3.photo.attach(io: File.open('app/assets/images/yacine.jpg'),filename: 'yacine.jpg' )
-user3.save!
+user3.save
 user4.photo.attach(io: File.open('app/assets/images/valerian.jpg'),filename: 'valerian.jpg' )
-user4.save!
+user4.save
 user5.photo.attach(io: File.open('app/assets/images/debo.jpg'),filename: 'debo.jpg' )
-user5.save!
+user5.save
 user6.photo.attach(io: File.open('app/assets/images/lao.jpg'),filename: 'lao.jpg' )
-user6.save!
+user6.save
 user7.photo.attach(io: File.open('app/assets/images/kevin.jpg'),filename: 'kevin.jpg' )
-user7.save!
+user7.save
 user8.photo.attach(io: File.open('app/assets/images/clo.jpg'),filename: 'clo.jpg' )
-user8.save!
+user8.save
 user9.photo.attach(io: File.open('app/assets/images/djadja.jpg'),filename: 'djadja.jpg' )
-user9.save!
+user9.save
 user10.photo.attach(io: File.open('app/assets/images/fred.png'),filename: 'fred.png' )
-user10.save!
+user10.save
 user11.photo.attach(io: File.open('app/assets/images/qian.jpg'),filename: 'qian.jpg' )
-user11.save!
+user11.save
 user12.photo.attach(io: File.open('app/assets/images/maelie.jpg'),filename: 'maelie.jpg' )
-user12.save!
+user12.save
 user13.photo.attach(io: File.open('app/assets/images/eva.jpg'),filename: 'eva.jpg' )
-user13.save!
+user13.save
 user14.photo.attach(io: File.open('app/assets/images/rika.jpg'),filename: 'rika.jpg' )
-user14.save!
+user14.save
 user15.photo.attach(io: File.open('app/assets/images/alex.jpg'),filename: 'alex.jpg' )
-user15.save!
+user15.save
 user16.photo.attach(io: File.open('app/assets/images/benoit.jpg'),filename: 'benoit.jpg' )
-user16.save!
+user16.save
 user17.photo.attach(io: File.open('app/assets/images/natalia.jpg'),filename: 'natalia.jpg' )
-user17.save!
+user17.save
 user18.photo.attach(io: File.open('app/assets/images/florine.webp'),filename: 'florine.webp' )
-user18.save!
+user18.save
 user19.photo.attach(io: File.open('app/assets/images/claire.jpg'),filename: 'claire.jpg' )
-user19.save!
+user19.save
 user20.photo.attach(io: File.open('app/assets/images/florent.jpg'),filename: 'florent.jpg' )
-user20.save!
+user20.save
 user21.photo.attach(io: File.open('app/assets/images/olivier.jpg'),filename: 'olivier.jpg' )
-user21.save!
+user21.save
 user22.photo.attach(io: File.open('app/assets/images/hugo.jpg'),filename: 'hugo.jpg' )
-user22.save!
+user22.save
 
 puts "users doc ok"
 # SEED DES COURS
@@ -198,7 +198,7 @@ event17 = Event.create!(location: "Salle Rubis : BDE",user_id: user1.id, created
 event18 = Event.create!(location: "Amphithéâtre Eva",user_id: user1.id, created_by: "Valerian", starting_date: , title: "Expat en remote, comment faire ?", category: "Témoignage", description: "Valérian vous partage son expérience d'expat en tant que développeur junior. Comment organiser ses RDV avec le décalage horaire, comment passer les entretiens d'embauche à distance et plein d'autres questions. Super expérience de témoignage d'un éleveur de moutons qui bosse aussi dans la tech")
 event19 = Event.create!(location: "Salle Emeraude : BDE",user_id: user1.id, created_by: "Aymard", starting_date: , title: "On recherche des dev pour coder SHARE", category: "Speed dating", description: "Venez participer à l'expérience incroyable de coder une app dont l'avenir est assuré. Plus d'infos : contact@share.fr.")
 
-puts "event ok"
+puts "event"
 
 amphi1 = Amphi.create!(name: "Jade")
 amphi2 = Amphi.create!(name: "Sarah")
