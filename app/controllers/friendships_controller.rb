@@ -9,9 +9,10 @@ class FriendshipsController < ApplicationController
 
   def create
     friend = User.find(params[:user_id])
-    # friendship = current_user.friendships(friend: friend, status: 'pending')
+
     user = current_user
     friendship = Friendship.new(friend: friend, status: 'pending', user: user)
+
     if friendship.save
       redirect_to users_path, notice: "Demande d'amitié envoyée."
     else
