@@ -34,6 +34,7 @@
               <%= render "messages/message", message: message %>
             </div>
           </div>
+          <i class=" d-flex time justify-content-center"><%= message.created_at.in_time_zone('Europe/Paris').strftime("%k:%M ") %></i>
         <% end %>
       </div>
 

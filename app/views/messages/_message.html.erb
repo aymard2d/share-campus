@@ -1,8 +1,9 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.first_name %></strong>
-    <strong><%= message.user.last_name %></strong>
-    <i><%= message.created_at.in_time_zone('Europe/Paris').strftime(" at %k:%M ") %>:</i>
-  </small>
-  <p><%= message.content %></p>
+<div class="d-flex" id="message-<%= message.id %>">
+    <%= cl_image_tag message.user.photo.key, width: 250,crop: :fill,  class: "avatar-large-message", alt: "avatar-large" %>
+    <div>
+      <small>
+        <strong><%= message.user.first_name %></strong>
+      </small>
+      <p class="message-content"><%= message.content %></p>
+    </div>
 </div>
