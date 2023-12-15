@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
     return unless params[:query].present?
 
-    sql_subquery = "title ILIKE :query OR description ILIKE :query OR starting_date ILIKE :query"
+    sql_subquery = "title ILIKE :query OR description ILIKE :query OR CAST(starting_date AS TEXT) ILIKE :query"
     @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
   end
 
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_path}
       format.text { render partial: "events/visualisation_event", locals: {event: @event}, formats: [:html] }
-    end 
+    end
   end
 
   private
