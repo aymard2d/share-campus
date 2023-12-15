@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'amphis/index'
-  get 'amphis/show'
+  # get 'amphis/index'
+  # get 'amphis/show'
+  resources :amphis, only: [:index, :show]
   get 'user_events/create'
   get 'events/new'
   get 'events/index'
