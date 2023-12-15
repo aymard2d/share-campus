@@ -4,7 +4,7 @@
     <p class="event-intro"> <%= event.created_by%> présente </p>
     <h4 class="visu-subtitle"> <%= event.title%> </h4>
     <p class="summarize"> <%= event.description%> </p>
-    <h5 class="card-category">  
+    <h5 class="card-category">
     <% if event.category == "Soirée" %>
       <h5 class="card-category"><i class="fa-solid fa-champagne-glasses"></i></h5>
     <% elsif event.category == "Conférence" %>
@@ -27,8 +27,12 @@
       <p class="card-category"><i class="fa-solid fa-bullhorn"></i></p>
       <% else %>
       <br>
-      <p><ems>Lieu de l'évènement :</ems> 
-        <br> <span class="card-category"><%= event.location %></p></span>
+      <p><ems>Lieu de l'évènement :</ems>
+      <br>
+        <span class="card-category">
+          <%= link_to  event.location, amphi_path(2), class: "button-78" %>
+        </span>
+      </p>
     <% end %>
     <%#= button_to '♡', event_likes_path(course), method: :post, class: "button-24 text-decoration-none" %>
   </div>
