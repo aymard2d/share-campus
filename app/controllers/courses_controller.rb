@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
   end
   
   def show
-
+    @review = Review.new(course: @course)
     @course = Course.find(params[:id])
     respond_to do |format|
       format.html { redirect_to courses_path}

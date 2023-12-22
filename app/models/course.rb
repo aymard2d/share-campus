@@ -7,4 +7,6 @@ class Course < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes, source: :courses
 
+  has_many :reviews, dependent: :destroy
+
 end

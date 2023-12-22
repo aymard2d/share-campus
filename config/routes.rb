@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
+  get 'reviews/destroy'
   get 'amphis/index'
   get 'amphis/show'
   get 'user_events/create'
@@ -16,12 +18,17 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+
+
   resources :courses do
     resources :likes, only: %i[create]
+    resources :reviews, only: :create
   end
+
   # Defines the root path route ("/")
   resources :users, only: [:show, :index]
   resources :dashboards, only: [:show, :index]
+
   # root "posts#index"
   resources :courses, only: [:index, :create, :show]
   resources :libraries, only: :show do
@@ -37,14 +44,17 @@ Rails.application.routes.draw do
     resources :friendships, only: [:create, :destroy]
   end
 
-
-    resources :friendships, only: [] do
-      member do
-        patch :accept
-        patch :decline
-      end
-      resource :dashboards, only: %i[show]
+  resources :friendships, only: [] do
+    member do
+      patch :accept
+      patch :decline
     end
+    resource :dashboards, only: %i[show]
+  end
 
   resources :amphis, only: [:index, :show]
+  
+  resources :reviews, only: :destroy
 end
+
+
