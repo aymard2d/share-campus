@@ -4,9 +4,9 @@ class ReviewsController < ApplicationController
     @course = Course.find(params[:course_id])
     @review.course = @course
     if @review.save
-      redirect_to course_path(@course)
+      redirect_to courses_path
     else
-      # @bookmark = Bookmark.new
+      @bookmark = Bookmark.new
       render 'courses/show', status: :unprocessable_entity
     end
   end
@@ -15,5 +15,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to course_path(@review.course)
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:rating)
   end
 end
