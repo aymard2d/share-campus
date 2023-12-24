@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
     @review = Review.new(course: @course)
     respond_to do |format|
       format.html { redirect_to courses_path}
-      format.text { render partial: "courses/visualisation_card", locals: {course: @course}, formats: [:html] }
+      format.text { render partial: "courses/show", locals: {course: @course, review: @review}, formats: [:html] }
     end 
   end
   

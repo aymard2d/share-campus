@@ -54,17 +54,6 @@
     border-radius: 20px;
     padding: 10px;
 
-
-    .btn-file {
-      justify-self: end;
-      font-family: 'Bowlby One SC';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
-
-    }
-
     .icon-file {
       align-self: center;
       margin: 20px 5px 20px 5px;
@@ -73,6 +62,15 @@
     }
   }
 
+  .btn-file {
+    justify-self: end;
+    font-family: 'Bowlby One SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
   .form-file {
     width: 300px;
     margin: 10px;

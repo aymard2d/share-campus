@@ -19,32 +19,32 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-
-  resources :courses do
+  #courses routes
+  resources :courses , only: [:index, :create, :show] do
     resources :likes, only: %i[create]
-    resources :reviews, only: :create
+    resources :reviews, only: %i[create]
   end
 
-  # Defines the root path route ("/")
-  resources :users, only: [:show, :index]
+  #dashboards routes
   resources :dashboards, only: [:show, :index]
 
-  # root "posts#index"
-  resources :courses, only: [:index, :create, :show]
+  #libraries routes
   resources :libraries, only: :show do
     resources :messages, only: :create
   end
 
-  #routes des évènements
+  #events routes
   resources :events, only: [:index, :show, :create] do
     resources :user_events, only: :create
   end
 
-  resources :users do
-    resources :friendships, only: [:create, :destroy]
+  #users routes
+  resources :users, only: [:show, :index] do
+    resources :friendships
   end
 
-  resources :friendships, only: [] do
+  #friendships routes
+  resources :friendships, only: [:create, :destroy] do
     member do
       patch :accept
       patch :decline
@@ -52,8 +52,10 @@ Rails.application.routes.draw do
     resource :dashboards, only: %i[show]
   end
 
+  #amphis routes
   resources :amphis, only: [:index, :show]
-  
+
+  #reviews routes
   resources :reviews, only: :destroy
 end
 
