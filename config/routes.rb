@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   #courses routes
   resources :courses , only: [:index, :create, :show] do
     resources :likes, only: %i[create]
-    resources :reviews, only: %i[create]
+    resources :reviews
   end
 
   #dashboards routes

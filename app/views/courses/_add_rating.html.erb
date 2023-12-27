@@ -15,9 +15,9 @@
 <div class="col-12 col-sm-6">
   <div class="bg-white rounded p-3">
     <h5>Add your rating</h5>
-    <%#= simple_form_for [@course, @review] do |f| %>
-      <%#= f.input :rating, as: :select, collection: (1..5), required: true, label: false, input_html: { data: { controller: "star-rating" } } %>
-      <%#= f.submit class: "btn btn-flat mt-2" %>
-    <%# end %>
+    <%= simple_form_for [course, review] do |f| %>
+      <%= f.input :rating, as: :select, collection: (1..5), required: true, label: false, input_html: { data: { controller: "star-rating" } } %>
+      <%= f.submit class: "btn btn-flat mt-2" %>
+    <% end %>
   </div>
 </div>
