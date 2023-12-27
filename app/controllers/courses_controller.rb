@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @course = Course.new
+    @review = Review.new(course: @course)
     @courses = Course.all.order("created_at DESC")
     @last_course = @courses[-1]
     return unless params[:query].present?
@@ -23,17 +24,17 @@ class CoursesController < ApplicationController
   end
   
   def show
-
     @course = Course.find(params[:id])
+    @review = Review.new(course: @course)
     respond_to do |format|
       format.html { redirect_to courses_path}
-      format.text { render partial: "courses/visualisation_card", locals: {course: @course}, formats: [:html] }
+      format.text { render partial: "courses/visualisation_card", locals: {course: @course, review: @review}, formats: [:html] }
     end 
   end
   
   private
 
   def course_params
-    params.require(:course).permit(:title, :summarize, :category, :date, :document, :user_id, :like)
+    params.require(:course).permit(:title, :summarize, :category, :date, :document, :user_id, :like, :review)
   end
 end

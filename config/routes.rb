@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  # get 'amphis/index'
-  # get 'amphis/show'
-  resources :amphis, only: [:index, :show]
+
+  get 'reviews/create'
+  get 'reviews/destroy'
+  get 'amphis/index'
+  get 'amphis/show'
   get 'user_events/create'
   get 'events/new'
   get 'events/index'
@@ -17,35 +19,45 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-  resources :courses do
+
+  #courses routes
+  resources :courses , only: [:index, :create, :show] do
     resources :likes, only: %i[create]
+    resources :reviews
   end
-  # Defines the root path route ("/")
-  resources :users, only: [:show, :index]
+
+  #dashboards routes
   resources :dashboards, only: [:show, :index]
-  # root "posts#index"
-  resources :courses, only: [:index, :create, :show]
+
+  #libraries routes
   resources :libraries, only: :show do
     resources :messages, only: :create
   end
 
-  #routes des évènements
+  #events routes
   resources :events, only: [:index, :show, :create] do
     resources :user_events, only: :create
   end
 
-  resources :users do
-    resources :friendships, only: [:create, :destroy]
+  #users routes
+  resources :users, only: [:show, :index] do
+    resources :friendships
   end
 
-
-    resources :friendships, only: [] do
-      member do
-        patch :accept
-        patch :decline
-      end
-      resource :dashboards, only: %i[show]
+  #friendships routes
+  resources :friendships, only: [:create, :destroy] do
+    member do
+      patch :accept
+      patch :decline
     end
+    resource :dashboards, only: %i[show]
+  end
 
+  #amphis routes
   resources :amphis, only: [:index, :show]
+
+  #reviews routes
+  resources :reviews, only: :destroy
 end
+
+
