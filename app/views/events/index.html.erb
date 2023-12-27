@@ -67,19 +67,19 @@
       </div>
     </div>
   </div>
+
   <div>
     <div class="display-event">
       <div>
-
         <%= render "events/visualisation_event", event: @last_event %>
       </div>
-      <div class="main-container-file">
-        <div class="file-download">
-          <img src="<%= image_path 'add-event.jpg'%>" class="icon-file" >
-          <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
-        </div>
+        <div class="main-container-file">
+          <div class="file-download">
+            <img src="<%= image_path 'add-event.jpg'%>" class="icon-file" >
+            <button class="button-62 btn-file" data-action="click->add-event#displayForm" role="button"> Share ton évènement </button>
+          </div>
         <%= render 'events/add_event_form', event: @event%>
-      </div>
+        </div>
     </div>
   </div>
 </div>

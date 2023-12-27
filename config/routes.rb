@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'reviews/create'
   get 'reviews/destroy'
   get 'amphis/index'
