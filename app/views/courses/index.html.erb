@@ -38,13 +38,13 @@
       <div class="main-card-content">
         <%= render "courses/visualisation_card", course: @last_course %>
         <div class="main-container-file">
+
           <div class="file-download">
             <img src="<%= image_path 'file.png'%>" class="icon-file" >
             <button class="button-62 btn-file"
             data-action="click->add-course#displayForm" role="button"> Share ton cours </button>
           </div>
         </div>
-
       <%= render 'courses/add_course_form' %>
       </div>
     </div>
