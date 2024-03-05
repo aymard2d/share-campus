@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   #courses routes
-  resources :courses , only: [:index, :create, :show] do
+  resources :courses , only: [:index, :create, :show, :destroy] do
     resources :likes, only: %i[create]
     resources :reviews
   end

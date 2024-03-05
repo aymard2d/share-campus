@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :set_courses, only: [:show, :destroy]
+
   def index
     @course = Course.new
     @review = Review.new(course: @course)
@@ -24,7 +26,6 @@ class CoursesController < ApplicationController
   end
   
   def show
-    @course = Course.find(params[:id])
     @review = Review.new(course: @course)
     respond_to do |format|
       format.html { redirect_to courses_path}
@@ -32,9 +33,18 @@ class CoursesController < ApplicationController
     end 
   end
   
+  def destroy
+    @course.destroy
+    redirect_to courses_path, status: :see_other, notice: "#{@course.name.capitalize} a bien été supprimé."
+  end
+
   private
 
   def course_params
     params.require(:course).permit(:title, :summarize, :category, :date, :document, :user_id, :like, :review)
+  end
+
+  def set_courses
+    @course = Course.find(params[:id])
   end
 end

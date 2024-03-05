@@ -25,8 +25,8 @@
           params[:query],
           class: "form-control bg-none border-0 search",
           placeholder: "Rechercher un sharemates",
-          data: { action:  "keyup->display-user-card#filterUser",
-            display_user_card_target: "input" }
+          data: { action:  "keyup->display-user-card#filter",
+            furniture_search_filter_target: "input" }
         %>
         <%= button_tag(type: "submit", class: "btn btn-link text-info") do %>
           <i class="fa fa-search"></i>
